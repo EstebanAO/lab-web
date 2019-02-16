@@ -1,0 +1,57 @@
+<%= form_with(model: materium, local: true) do |form| %>
+  <% if materium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(materium.errors.count, "error") %> prohibited this materium from being saved:</h2>
+
+      <ul>
+      <% materium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clave %>
+    <%= form.text_field :clave %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clu_clases %>
+    <%= form.number_field :clu_clases %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clu_laboratorio %>
+    <%= form.number_field :clu_laboratorio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clu_unidades %>
+    <%= form.number_field :clu_unidades %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estatus %>
+    <%= form.check_box :estatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.number_field :tipo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :info %>
+    <%= form.text_field :info %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

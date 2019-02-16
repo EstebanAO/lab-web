@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Anuncios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anuncios.each do |anuncio| %>
+      <tr>
+        <td><%= anuncio.descripcion %></td>
+        <td><%= anuncio.fecha %></td>
+        <td><%= link_to 'Show', anuncio %></td>
+        <td><%= link_to 'Edit', edit_anuncio_path(anuncio) %></td>
+        <td><%= link_to 'Destroy', anuncio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anuncio', new_anuncio_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @materium.nombre %>
+</p>
+
+<p>
+  <strong>Clave:</strong>
+  <%= @materium.clave %>
+</p>
+
+<p>
+  <strong>Clu clases:</strong>
+  <%= @materium.clu_clases %>
+</p>
+
+<p>
+  <strong>Clu laboratorio:</strong>
+  <%= @materium.clu_laboratorio %>
+</p>
+
+<p>
+  <strong>Clu unidades:</strong>
+  <%= @materium.clu_unidades %>
+</p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @materium.estatus %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @materium.tipo %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @materium.info %>
+</p>
+
+<%= link_to 'Edit', edit_materium_path(@materium) %> |
+<%= link_to 'Back', materia_path %>
