@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV['POSTGRES_HOST']  || 'localhost' %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['WEB-ITESM_DATABASE_PASSWORD'] %>
+  pool: 5
+  timeout: 5000
+development:
+  <<: *default
+  database: web-itesm_development
+
+test:
+  <<: *default
+  database: web-itesm_test
+
+production:
+  <<: *default
+  database: web-itesm_production
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['WEB-ITESM_DATABASE_PASSWORD'] %>
