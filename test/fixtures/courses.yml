@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  code: MyString
+  clu_course: 1
+  clu_laboratory: 1
+  clu_unities: 1
+  status: false
+  type: 1
+  information: MyString
+
+two:
+  name: MyString
+  code: MyString
+  clu_course: 1
+  clu_laboratory: 1
+  clu_unities: 1
+  status: false
+  type: 1
+  information: MyString

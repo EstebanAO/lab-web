@@ -1,2 +1,0 @@
-class Anuncio < ApplicationRecord
-end

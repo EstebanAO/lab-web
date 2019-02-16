@@ -1,2 +1,0 @@
-class Vinculacion < ApplicationRecord
-end

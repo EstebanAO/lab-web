@@ -1,2 +1,0 @@
-class Profesor < ApplicationRecord
-end

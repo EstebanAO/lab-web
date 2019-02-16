@@ -20,5 +20,5 @@ test:
 production:
   <<: *default
   database: web-itesm_production
-  username: <%= ENV['POSTGRES_USER'] %>
+  username: web-itesm<%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['WEB-ITESM_DATABASE_PASSWORD'] %>
