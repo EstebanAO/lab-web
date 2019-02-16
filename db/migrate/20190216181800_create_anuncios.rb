@@ -1,8 +1,8 @@
 class CreateAnuncios < ActiveRecord::Migration[5.2]
   def change
     create_table :anuncios do |t|
-      t.string :descripcion
-      t.datetime :fecha
+      t.string :descripcion, null: false
+      t.datetime :fecha, null: false
 
       t.timestamps
     end
