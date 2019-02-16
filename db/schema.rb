@@ -10,9 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_02_16_181800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "anuncios", force: :cascade do |t|
+    t.string "descripcion", null: false
+    t.datetime "fecha", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "documentos", force: :cascade do |t|
+    t.string "descripcion"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "materia", force: :cascade do |t|
+    t.string "nombre"
+    t.string "clave"
+    t.integer "clu_clases"
+    t.integer "clu_laboratorio"
+    t.integer "clu_unidades"
+    t.boolean "estatus"
+    t.integer "tipo"
+    t.string "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profesors", force: :cascade do |t|
+    t.string "nombre", null: false
+    t.string "apellido_paterno"
+    t.string "apellido_materno"
+    t.string "correo"
+    t.string "oficina"
+    t.string "cv"
+    t.integer "tipo", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "password", null: false
+    t.integer "rol", default: 1, null: false
+    t.string "email", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vinculacions", force: :cascade do |t|
+    t.string "nombre", null: false
+    t.string "descripcion"
+    t.string "participantes"
+    t.datetime "fecha_inicio"
+    t.datetime "fecha_fin"
+    t.integer "tipo", null: false
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
