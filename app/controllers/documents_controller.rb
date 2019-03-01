@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:show, :edit, :update, :destroy]
+  before_action :set_document, :authenticate_user!, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :exception
 
   # GET /documents
   # GET /documents.json

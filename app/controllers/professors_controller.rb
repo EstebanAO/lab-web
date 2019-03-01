@@ -1,5 +1,6 @@
 class ProfessorsController < ApplicationController
-  before_action :set_professor, only: [:show, :edit, :update, :destroy]
+  before_action :set_professor, :authenticate_user!, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :exception
 
   # GET /professors
   # GET /professors.json

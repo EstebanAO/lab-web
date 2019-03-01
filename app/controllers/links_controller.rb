@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_link, :authenticate_user!, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :exception
 
   # GET /links
   # GET /links.json
