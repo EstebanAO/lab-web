@@ -17,5 +17,6 @@ module WebItesm
     # the framework and any gems in your application.
     
     config.assets.initialize_on_precompile = false
+    config.secret_key_base = '4c170458d1921093c3beb07cca697400e7e588afb62b8a6605358dd1bad0a10850f60b62bb0fd5ec91624bd1b18eac9a478a6b70d9d566736c7a42d65513646a'
   end
 end
