@@ -1,0 +1,282 @@
+
+ @import url('https://fonts.googleapis.com/css?family=Muli:300,400|Philosopher:400,700');
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ html,
+ body {
+   background-color: #fff;
+   color: #3e4546;
+   font-family: 'Muli', sans-serif;
+   font-weight: 300;
+   font-size: 20px;
+   text-rendering: optimizeLegibility;
+   overflow-x: hidden;
+ }
+ 
+ p {
+   font-size: 90%;
+   line-height: 1.7;
+ }
+ 
+ .row {
+   max-width: 90%;
+   margin: 0 auto;
+ }
+ 
+ section {
+     padding: 20px 0 40px 0;
+ }
+ 
+ 
+ 
+ /*---------- NAV ----------*/
+ .navbar {
+   margin-bottom: 0;
+   border: 0;
+   font-size: 20px;
+   background-color: #003366;
+   overflow: hidden;
+   text-decoration: none;
+ }
+ 
+ .navbar:hover {
+   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+ }
+ 
+ .nav li a:link,
+ .nav li a:visited {
+   text-align: left;
+   text-decoration: none;
+   color: #fff;
+   font-size: 17px;
+   background-color: transparent;
+ }
+ 
+ @media screen and (min-width: 768px){
+   .nav li a:after {
+     display: block;
+     content: "";
+     border-bottom: solid 2px #f8eee7;
+     -webkit-transform: scaleX(0);
+             transform: scaleX(0);
+     transition: -webkit-transform 250ms ease-in-out;
+     transition: transform 250ms ease-in-out;
+     transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+     -webkit-transform-origin: 100% 50%;
+             transform-origin: 100% 50%;
+   }
+ 
+   .nav li a:hover:after {
+     -webkit-transform: scaleX(1);
+             transform: scaleX(1);
+     -webkit-transform-origin: 0 50%;
+             transform-origin: 0 50%;
+   }
+   }
+ 
+   .icon-bar {
+     display: block;
+     width: 15px;
+     height: 5px;
+     background-color: #f8eee7;
+     margin: 6px 0;
+     box-shadow: 0 2px rgba(0, 0, 0, 0.5);
+ }
+ 
+   .navbar-brand:link,
+   .navbar-brand:visited {
+     font-size: 26px;
+     color: #fff;
+     margin-bottom: 3px;
+   }
+ 
+   .navbar-brand:hover {
+     color: #9eb9ff;
+   }
+ 
+ /*------- HEADER ------------*/
+ 
+ header {
+   position: relative;
+   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://tec.mx/sites/default/files/styles/header_full/public/2019-02/estudiaposgrados.jpg?itok=Ei8Pl4SZ);
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   height: 100vh;
+   text-align: center;
+   color: #fff;
+   width: 100%;
+   text-align: center;
+ }
+ 
+ .text-box {
+     position: absolute;
+     width: 90%;
+     top: 50%;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%)
+ }
+ 
+ h1 {
+   font-family: 'Philosopher', sans-serif;
+   font-size: 250%;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   word-spacing: 2px;
+   color: #fff;
+   text-align: center;
+   margin-top: 50px;
+   margin-bottom: 10px;
+ }
+ 
+ .text-box p {
+   text-align: center;
+   font-style: italic;
+   margin-bottom: 30px;
+ }
+ 
+ /*----------- FEATURE SECTION -------*/
+ 
+ .section-features {
+   text-align: center;
+ }
+ 
+ h2 {
+   font-size: 180%;
+   word-spacing: 2px;
+   font-style: bold;
+   letter-spacing: 1px;
+   color: #081a2b;
+   text-transform: uppercase;
+   text-align: center;
+ }
+ 
+ h2:after {
+   display: block;
+   height: 2px;
+   background-color: #9ba7b3;
+   content: "";
+   width: 100px;
+   margin: 0 auto;
+   margin-top: 30px;
+ }
+ 
+ h3 {
+   font-size: 110%;
+   margin-bottom: 15px;
+   text-transform: uppercase;
+   color: #9aa4a5;
+ }
+ 
+ .icon-p {
+   margin-top: 30px;
+   font-size: 250%;
+   color: #003366;
+ }
+ 
+ 
+ 
+ /*--------FOOTER -------*/
+ 
+ footer {
+   padding: 20px;
+   background-color: #212121;
+   text-align: center;
+   color: #fff;
+ }
+ 
+ .footer-nav {
+   list-style: none;
+   font-size: 80%;
+ }
+ 
+ .footer-nav h4,
+ .contact {
+   font-size: 120%;
+ }
+ 
+ footer p {
+   font-size: 75%;
+ }
+ 
+ footer a:link,
+ footer a:visited {
+   color: #eef3ff;
+   transition: 0.3s;
+   margin-top: 5px;;
+ }
+ 
+ footer a:hover,
+ footer a:active {
+   color: #9eb9ff;
+   text-decoration: none;
+ }
+ 
+ hr {
+   width: 60%;
+   margin: 10px auto;
+ }
+ 
+ @media only screen and (max-width: 767px) {
+    section { padding: 30px 0; }
+   
+   .navbar-toggle {
+     margin: 0 4px 0 0;
+   }
+   
+   .text-box {
+     padding: 0 4%;
+     width: 80%;
+   }
+   
+   .nav li a:hover {
+     color: #9eb9ff;
+ }
+   
+   body { font-size: 16px; }
+   section { padding: 30px 0; }
+    
+   
+   h1 {
+     font-size: 180%;
+     padding: 10px;
+     margin-top: 0;
+   }   
+ }
+ 
+ 
+ @media screen and (max-width: 480px) {
+    section { padding: 25px 0; }
+   
+   .btn:link,
+   .btn:visited {
+     display: block;
+     font-size: 70%;
+     margin: 0 auto 5px auto;
+     width: 50%;
+     padding: 10px 15px;
+ }
+ 
+   h1 {
+     margin: 0;
+     font-size: 160%;
+   }
+   
+   .text-box p {
+     font-size: 80%;
+     margin-bottom: 8px;
+   }
+   
+   h2 {
+     margin-top: 40px;
+   }
+   
+     
+ }
