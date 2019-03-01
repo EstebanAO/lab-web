@@ -1,6 +1,5 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
-
   # GET /announcements
   # GET /announcements.json
   def index
