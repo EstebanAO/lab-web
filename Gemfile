@@ -5,6 +5,7 @@ ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
+gem 'jquery-rails', '~> 4.3.3'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bootstrap-datepicker-rails'# Use postgresql as the database for Active Record
 # Use postgresql as the database for Active Record
