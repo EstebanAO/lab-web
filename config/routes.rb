@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "announcements#index"
+devise_for :users
+  root 'static_pages#home'
   resources :announcements
   resources :documents
   resources :users
