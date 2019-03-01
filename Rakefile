@@ -3,4 +3,5 @@
 
 require_relative 'config/application'
 
+config.assets.initialize_on_precompile = false
 Rails.application.load_tasks
