@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "announcements#index"
+  get 'home/index'
   resources :announcements
   resources :documents
   resources :users
