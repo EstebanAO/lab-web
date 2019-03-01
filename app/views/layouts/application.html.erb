@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta charset="UTF-8">
     <title>WebItesm</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
   </head>
 
   <body>
+      <nav class="navbar navbar-fixed-top" id="nav-bar">
+      <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Departamento de Computación</a>
+
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#home">Profesores</a></li>
+                  <li><a href="#features">Materias</a></li>
+                  <li><a href="#products">Vinculaciones</a></li>
+                  <li><a href="#login">Iniciar Sesión</a></li>
+              </ul>
+          </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
     <%= yield %>
+    <footer>
+      <div class="row">
+          <div class="col-sm-4">
+              <ul class="footer-nav">
+                  <h4>Información</h4>
+                  <li><a href="#"> </a></li>
+                  <li><a href="https://tec.mx/es/aviso-legal">Aviso Legal</a></li>
+                  <li><a href="https://tec.mx/es/politicas-de-privacidad-del-tecnologico-de-monterrey">Políticas de
+                          Privacidad</a></li>
+                  <li><a href="https://tec.mx/es/avisos-de-privacidad">Aviso de Privacidad</a></li>
+              </ul>
+          </div>
+
+          <div class="col-sm-4 col-sm-offset-4">
+              <ul class="footer-nav">
+                  <h4>Contacto</h4>
+                  <li><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Av. Eugenio Garza Sada 2501 Sur Col.
+                      Tecnológico C.p. 64849 | Monterrey, Nuevo León, México </li>
+                  <li><i class="fas fa-phone" aria-hidden="true"></i> +52 (81) 8358-200</li>
+                  <li><i class="fas fa-envelope" aria-hidden="true"></i> departamento.computacion&#64;tec.mx</li>
+              </ul>
+          </div>
+      </div>
+      <hr>
+      <div class="row">
+          <div class="contact">
+              <a href="https://www.facebook.com/TecdeMonterrey/" target="_blank">
+                  <span class="icon"><i class="fab fa-facebook"></i></span></a>
+              <a href="https://twitter.com/tecdemonterrey" target="_blank">
+                  <span class="icon"><i class="fab fa-twitter"></i></span></a>
+              <a href="https://www.linkedin.com/school/itesm/" target="_blank">
+                  <span class="icon"><i class="fab fa-linkedin"></i></span></a>
+              <a href="https://www.youtube.com/TECdeMonterrey" target="_blank">
+                  <span class="icon"><i class="fab fa-youtube"></i></span></a>
+              <a href="https://www.instagram.com/tecdemonterrey/" target="_blank">
+                  <span class="icon"><i class="fab fa-instagram"></i></span></a>
+          </div>
+      </div>
+      <p>&copy 2019 Media de Chilaquiles</p>
+  </footer>
   </body>
+   
 </html>
+
