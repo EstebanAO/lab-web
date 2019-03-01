@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, :authenticate_user!, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_course, only: [:show, :edit, :update, :destroy]
   protect_from_forgery with: :exception
   # GET /courses
   # GET /courses.json
