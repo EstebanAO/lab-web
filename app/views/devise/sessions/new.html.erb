@@ -1,11 +1,14 @@
 <div class="container">
   <%= form_for(resource, html:{ class:"form" }, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <h2 class="form-heading">Log in</h2>
+      <h2 class="form-heading">Iniciar Sesión</h2>
       <div class="form-fields">
-        <%= f.email_field :email, class:"form-control", placeholder: "email" ,autofocus: true, autocomplete: "email" %>
-        <%= f.password_field :password, class:"form-control", placeholder: "password" , autocomplete: "current-password" %>
+        <%= f.label :correo %><br />
+        <%= f.email_field :email, class:"form-control", placeholder: "Correo" ,autofocus: true, autocomplete: "email" %>
+        
+        <%= f.label :contraseña %>
+        <%= f.password_field :password, class:"form-control", placeholder: "Contraseña" , autocomplete: "current-password" %>
       </div>
-       <%= f.submit "Log in" , class:"btn btn-lg btn-primary btn-block" %>
-      <%= render "devise/shared/links" , class:"text-center",style:"margin-top:10px" %>
+       <%= f.submit "Iniciar Sesión" , class:"btn btn-lg btn-primary btn-block" %>
+      <%= render "devise/shared/links" %>
   <% end %>
 </div>
