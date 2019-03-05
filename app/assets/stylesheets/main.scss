@@ -7,8 +7,8 @@
    box-sizing: border-box;
  }
  
- html,
- body {
+ html, body {
+   height: 100%;
    background-color: #fff;
    color: #3e4546;
    font-family: 'Muli', sans-serif;
@@ -185,11 +185,14 @@
  
  /*--------FOOTER -------*/
  
+
  footer {
    padding: 20px;
    background-color: #212121;
    text-align: center;
    color: #fff;
+   left: 0;
+   bottom: 0;
  }
  
  .footer-nav {
