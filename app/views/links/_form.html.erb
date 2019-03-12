@@ -1,52 +1,54 @@
-<%= form_with(model: link, local: true) do |form| %>
-  <% if link.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
+<div class="container">
+  <%= form_with(model: link, local: true) do |form| %>
+    <% if link.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
 
-      <ul>
-      <% link.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% link.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= form.label :participants %>
+      <%= form.text_field :participants %>
+    </div>
+
+    <div class="field">
+      <%= form.label :start_date %>
+      <%= form.datetime_select :start_date %>
+    </div>
+
+    <div class="field">
+      <%= form.label :end_date %>
+      <%= form.datetime_select :end_date %>
+    </div>
+
+    <div class="field">
+      <%= form.label :type %>
+      <%= form.number_field :type %>
+    </div>
+
+    <div class="field">
+      <%= form.label :url %>
+      <%= form.text_field :url %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :participants %>
-    <%= form.text_field :participants %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.number_field :type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
