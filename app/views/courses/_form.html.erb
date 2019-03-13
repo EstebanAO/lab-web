@@ -11,49 +11,47 @@
         </ul>
       </div>
     <% end %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
 
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
 
-    <div class="field">
-      <%= form.label :code %>
-      <%= form.text_field :code %>
-    </div>
+  <div class="field">
+    <%= form.label :clu_course %>
+    <%= form.number_field :clu_course %>
+  </div>
 
-    <div class="field">
-      <%= form.label :clu_course %>
-      <%= form.number_field :clu_course %>
-    </div>
+  <div class="field">
+    <%= form.label :clu_laboratory %>
+    <%= form.number_field :clu_laboratory %>
+  </div>
 
-    <div class="field">
-      <%= form.label :clu_laboratory %>
-      <%= form.number_field :clu_laboratory %>
-    </div>
+  <div class="field">
+    <%= form.label :clu_unities %>
+    <%= form.number_field :clu_unities %>
+  </div>
 
-    <div class="field">
-      <%= form.label :clu_unities %>
-      <%= form.number_field :clu_unities %>
-    </div>
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.check_box :status %>
+  </div>
 
-    <div class="field">
-      <%= form.label :status %>
-      <%= form.check_box :status %>
-    </div>
+  <div class="field">
+    <%= form.label :course_type %>
+    <%= form.number_field :course_type %>
+  </div>
 
-    <div class="field">
-      <%= form.label :type %>
-      <%= form.number_field :type %>
-    </div>
+  <div class="field">
+    <%= form.label :information %>
+    <%= form.text_field :information %>
+  </div>
 
-    <div class="field">
-      <%= form.label :information %>
-      <%= form.text_field :information %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-  <% end %>
-</div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

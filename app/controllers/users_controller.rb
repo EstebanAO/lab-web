@@ -1,10 +1,16 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_admin, only: [:new, :show, :edit, :update, :create]
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @curr_user = current_user
+    if !current_user.admin
+      @users = [current_user]
+    else
+      @users = User.all
+    end
+
   end
 
   # GET /users/1
@@ -14,7 +20,11 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if current_user.admin
+      @user = User.new
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /users/1/edit
@@ -69,6 +79,13 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:password, :role, :email)
+      params.require(:user).permit(:password, :admin, :email)
+    end
+
+    def check_admin
+      unless current_user.admin || current_user.id.to_s == params[:id].to_s
+        flash[:notice] = "You may only view your own products."
+        redirect_to root_path
+      end
     end
 end
