@@ -1,39 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @professor.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @professor.name %>
+  </p>
 
-<p>
-  <strong>Father last name:</strong>
-  <%= @professor.father_last_name %>
-</p>
+  <p>
+    <strong>Father last name:</strong>
+    <%= @professor.father_last_name %>
+  </p>
 
-<p>
-  <strong>Mother last name:</strong>
-  <%= @professor.mother_last_name %>
-</p>
+  <p>
+    <strong>Mother last name:</strong>
+    <%= @professor.mother_last_name %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @professor.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @professor.email %>
+  </p>
 
-<p>
-  <strong>Office:</strong>
-  <%= @professor.office %>
-</p>
+  <p>
+    <strong>Office:</strong>
+    <%= @professor.office %>
+  </p>
 
-<p>
-  <strong>Resume:</strong>
-  <%= @professor.resume %>
-</p>
+  <p>
+    <strong>Resume:</strong>
+    <%= @professor.resume %>
+  </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @professor.professor_type %>
-</p>
+  <p>
+    <strong>Type:</strong>
+    <%= @professor.professor_type %>
+  </p>
 
-<%= link_to 'Edit', edit_professor_path(@professor) %> |
-<%= link_to 'Back', professors_path %>
+  <%= link_to 'Edit', edit_professor_path(@professor) %> |
+  <%= link_to 'Back', professors_path %>
+
+</div>
