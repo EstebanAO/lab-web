@@ -1,42 +1,43 @@
 <div class="container">
+  <h1 class="title">Profesor</h1>
   <p id="notice"><%= notice %></p>
 
-  <p>
+  <p class="text-center">
     <strong>Name:</strong>
     <%= @professor.name %>
   </p>
 
-  <p>
+  <p class="text-center">
     <strong>Father last name:</strong>
     <%= @professor.father_last_name %>
   </p>
 
-  <p>
+  <p class="text-center">
     <strong>Mother last name:</strong>
     <%= @professor.mother_last_name %>
   </p>
 
-  <p>
+  <p class="text-center">
     <strong>Email:</strong>
     <%= @professor.email %>
   </p>
 
-  <p>
+  <p class="text-center">
     <strong>Office:</strong>
     <%= @professor.office %>
   </p>
 
-  <p>
+  <p class="text-center">
     <strong>Resume:</strong>
     <%= @professor.resume %>
   </p>
 
-  <p>
+  <p class="text-center">
     <strong>Type:</strong>
     <%= @professor.professor_type %>
   </p>
-
-  <%= link_to 'Edit', edit_professor_path(@professor) %> |
-  <%= link_to 'Back', professors_path %>
-
+  <p class="text-center">
+  <%= link_to 'Editar', edit_professor_path(@professor) , :class => 'btn btn-sm btn-primary'%> |
+  <%= link_to 'Regresar', professors_path, :class => 'btn btn-sm btn-primary' %>
+  </p>
 </div>
