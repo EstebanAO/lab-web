@@ -1,6 +1,6 @@
 <div class="container">
   <%= form_for(resource, html:{ class:"form" }, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <h2 class="form-heading">Iniciar Sesión</h2>
+      <h2 class="form-heading title">Iniciar Sesión</h2>
       <div class="form-fields">
         <%= f.label :correo %><br />
         <%= f.email_field :email, class:"form-control", placeholder: "Correo" ,autofocus: true, autocomplete: "email" %>

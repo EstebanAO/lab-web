@@ -1,6 +1,6 @@
 <div class="container">
   <%= form_for(resource, html:{ class:"form", method: :post}, as: resource_name, url: password_path(resource_name)) do |f| %>
-    <h2 class="form-heading">¿Olvidaste tu contraseña?</h2>
+    <h2 class="form-heading title">¿Olvidaste tu contraseña?</h2>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="form-fields">
       <%= f.label :correo %><br/>
