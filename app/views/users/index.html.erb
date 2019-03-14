@@ -6,8 +6,8 @@
 <table>
   <thead>
     <tr>
-      <th>Password</th>
       <th>Role</th>
+      <th>Admin</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,6 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.password %></td>
         <td><%= user.email %></td>
         <td><%= user.admin %></td>
         <td><%= link_to 'Show', user %></td>
