@@ -19,6 +19,16 @@
    overflow-x: hidden;
  }
  
+ .title{
+  color:#3e4546;
+  margin-top: 100px;
+  font-family: 'Muli', sans-serif;
+ }
+
+ .container{
+    min-height: 80%;
+ }
+
  p {
    font-size: 90%;
    line-height: 1.7;
@@ -89,13 +99,11 @@
      box-shadow: 0 2px rgba(0, 0, 0, 0.5);
  }
  
-   .navbar-brand{
-      height: 56px;
-   }
+  
 
    .navbar-brand:link,
    .navbar-brand:visited {
-     font-size: 26px;
+     font-size: 18px;
      color: #fff;
      margin-bottom: 3px;
    }
@@ -238,7 +246,6 @@
    .navbar-toggle {
      margin: 0 4px 0 0;
    }
-   
    .text-box {
      padding: 0 4%;
      width: 80%;
@@ -262,7 +269,6 @@
  
  @media screen and (max-width: 480px) {
     section { padding: 25px 0; }
-   
    .btn:link,
    .btn:visited {
      display: block;
