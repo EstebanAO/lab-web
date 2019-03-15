@@ -1,8 +1,10 @@
 <div class="container">
-    <h1>Editing Document</h1>
+    <h1 class="title">Editar Documento</h1>
 
     <%= render 'form', document: @document %>
 
-    <%= link_to 'Show', @document %> |
-    <%= link_to 'Back', documents_path %>
+    <p class="text-center">
+        <%= link_to 'Mostrar', @document , :class => 'btn btn-sm btn-primary btn-primary' %> |
+        <%= link_to 'Regresar', documents_path, :class => 'btn btn-sm btn-primary btn-primary' %>
+    </p>
 </div>
