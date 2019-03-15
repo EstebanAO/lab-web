@@ -3,7 +3,9 @@
 
     <%= render 'form', user: @user %>
     
-    <%= link_to 'Mostrar', @user , :class => 'btn btn-sm btn-primary' %> |
-    <%= link_to 'Regresar', users_path , :class => 'btn btn-sm btn-primary' %>
+    <p class="text-center">
+        <%= link_to 'Mostrar', @user , :class => 'btn btn-sm btn-primary btn-primary' %> |
+        <%= link_to 'Regresar', users_path, :class => 'btn btn-sm btn-primary btn-primary' %>
+    </p>
 </div>
 

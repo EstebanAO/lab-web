@@ -1,41 +1,45 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
+  <p class="text-center">
+    <strong>Nombre:</strong>
     <%= @link.name %>
   </p>
 
-  <p>
-    <strong>Description:</strong>
+  <p class="text-center">
+    <strong>Descripción:</strong>
     <%= @link.description %>
   </p>
 
-  <p>
-    <strong>Participants:</strong>
+  <p class="text-center">
+    <strong>Participantes:</strong>
     <%= @link.participants %>
   </p>
 
-  <p>
-    <strong>Start date:</strong>
+  <p class="text-center">
+    <strong>Fecha de Inicio:</strong>
     <%= @link.start_date %>
   </p>
 
-  <p>
-    <strong>End date:</strong>
+  <p class="text-center">
+    <strong>Fecha de cierre:</strong>
     <%= @link.end_date %>
   </p>
 
-  <p>
-    <strong>Type:</strong>
+  <p class="text-center">
+    <strong>Tipo de Proyecto:</strong>
     <%= @link.type %>
   </p>
 
-  <p>
-    <strong>Url:</strong>
+  <p class="text-center">
+    <strong>URL:</strong>
     <%= @link.url %>
   </p>
 
-  <%= link_to 'Edit', edit_link_path(@link) %> |
-  <%= link_to 'Back', links_path %>
+  <p class="text-center">
+    <%= link_to 'Editar', edit_link_path(@link) , :class => 'btn btn-sm btn-primary'%> |
+    <%= link_to 'Regresar', links_path, :class => 'btn btn-sm btn-primary' %>
+  </p>
 </div>
+
+

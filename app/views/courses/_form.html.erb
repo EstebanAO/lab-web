@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with(model: course, local: true) do |form| %>
+  <%= form_with(html:{ class:"form" } ,model: course, local: true) do |form| %>
     <% if course.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
@@ -11,47 +11,48 @@
         </ul>
       </div>
     <% end %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :Nombre %>
+    <%= form.text_field :name, class:"form-control" , placeholder: "Nombre" %>
   </div>
 
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
+  <div class="form-group">
+    <%= form.label :Clave %>
+    <%= form.text_field :code, class:"form-control" , placeholder: "Clave" %>
   </div>
 
-  <div class="field">
-    <%= form.label :clu_course %>
-    <%= form.number_field :clu_course %>
+  <div class="form-group">
+    <%= form.label :CLU_del_curso %>
+    <%= form.number_field :clu_course, class:"form-control" , placeholder: "CLU del Curso" %>
   </div>
 
-  <div class="field">
-    <%= form.label :clu_laboratory %>
-    <%= form.number_field :clu_laboratory %>
+  <div class="form-group">
+    <%= form.label :CLU_del_laboratorio %>
+    <%= form.number_field :clu_laboratory, class:"form-control" , placeholder: "CLU del Laboratorio" %>
   </div>
 
-  <div class="field">
-    <%= form.label :clu_unities %>
-    <%= form.number_field :clu_unities %>
+  <div class="form-group">
+    <%= form.label :CLU_de_Unidades %>
+    <%= form.number_field :clu_unities, class:"form-control" , placeholder: "CLU del Unidades" %>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.check_box :status %>
+  <div class="form-group">
+    <%= form.label :Activo_este_Semestre %>
+    <%= form.check_box :status, class:"form-check-input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :course_type %>
-    <%= form.number_field :course_type %>
+  <div class="form-group">
+    <%= form.label :Tipo_de_Curso %>
+    <%= form.select :course_type, ['Linea', 'Presencial'] , class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :information %>
-    <%= form.text_field :information %>
+  <div class="form-group">
+    <%= form.label :Información %>
+    <%= form.text_field :information, class:"form-control", placeholder: "Información" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <div class="actions" style="padding-top:10px;">
+      <%= form.submit 'Guardar', :class => 'btn btn-lg btn-primary btn-block' %>
+    </div>
 <% end %>
+</div>
