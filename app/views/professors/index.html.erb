@@ -36,6 +36,7 @@
   </table>
 
   <br>
-
-  <%= link_to 'New Professor', new_professor_path %>
+  <% if @curr_user.admin%>
+    <%= link_to 'New Professor', new_professor_path %>
+  <% end %>
 </div>

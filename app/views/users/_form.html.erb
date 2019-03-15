@@ -11,6 +11,10 @@
         </ul>
       </div>
     <% end %>
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
 
     <div class="field">
       <%= form.label :password %>
@@ -18,21 +22,19 @@
     </div>
 
     <div class="field">
-      <%= form.label :role %>
-      <%= form.number_field :role %>
+      <%= form.label :password_confirmation %>
+      <%= form.text_field :password_confirmation %>
     </div>
 
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email %>
-    </div>
-  <div class="field">
-    <%= form.label :admin %>
-    <%= form.check_box :admin %>
-  </div>
+    <% if @curr_user.admin %>
+      <div class="field">
+        <%= form.label :admin %>
+        <%= form.check_box :admin %>
+      </div>
+    <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
 <% end %>
 </div>
