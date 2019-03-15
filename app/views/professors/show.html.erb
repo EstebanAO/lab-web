@@ -3,41 +3,41 @@
   <p id="notice"><%= notice %></p>
 
   <p class="text-center">
-    <strong>Name:</strong>
+    <strong>Nombre:</strong>
     <%= @professor.name %>
   </p>
 
   <p class="text-center">
-    <strong>Father last name:</strong>
+    <strong>Apellido Paterno:</strong>
     <%= @professor.father_last_name %>
   </p>
 
   <p class="text-center">
-    <strong>Mother last name:</strong>
+    <strong>Apellido Materno:</strong>
     <%= @professor.mother_last_name %>
   </p>
 
   <p class="text-center">
-    <strong>Email:</strong>
+    <strong>Correo:</strong>
     <%= @professor.email %>
   </p>
 
   <p class="text-center">
-    <strong>Office:</strong>
+    <strong>Oficina:</strong>
     <%= @professor.office %>
   </p>
 
   <p class="text-center">
-    <strong>Resume:</strong>
+    <strong>CV:</strong>
     <%= @professor.resume %>
   </p>
 
   <p class="text-center">
-    <strong>Type:</strong>
+    <strong>Tipo de Profesor:</strong>
     <%= @professor.professor_type %>
   </p>
   <p class="text-center">
-  <%= link_to 'Editar', edit_professor_path(@professor) , :class => 'btn btn-sm btn-primary'%> |
-  <%= link_to 'Regresar', professors_path, :class => 'btn btn-sm btn-primary' %>
+    <%= link_to 'Editar', edit_professor_path(@professor) , :class => 'btn btn-sm btn-primary'%> |
+    <%= link_to 'Regresar', professors_path, :class => 'btn btn-sm btn-primary' %>
   </p>
 </div>

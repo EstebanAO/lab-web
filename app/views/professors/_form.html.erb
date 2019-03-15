@@ -11,42 +11,42 @@
         </ul>
       </div>
     <% end %>
-    <div class="field">
+    <div class="form-group">
       <%= form.label :Nombre %>
       <%= form.text_field :name, class:"form-control" , placeholder: "Nombre"  %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :Apellido_Paterno %>
       <%= form.text_field :father_last_name, class:"form-control" , placeholder: "Apellido Paterno" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :Apellido_Materno %>
       <%= form.text_field :mother_last_name, class:"form-control" , placeholder: "Apellido Materno" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :Correo %>
       <%= form.text_field :email, class:"form-control" , placeholder: "Correo" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :Oficina %>
       <%= form.text_field :office, class:"form-control" , placeholder: "Oficina" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :CV %>
       <%= form.text_field :resume, class:"form-control" , placeholder: "CV" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :Tipo_de_Profesor %>
       <%= form.select :professor_type, ['Planta', 'Catedra'] , class:"form-control"%>
     </div>
 
-    <div class="actions" style="padding-top:10px;">
+    <div class="actions">
       <%= form.submit 'Guardar', :class => 'btn btn-lg btn-primary btn-block' %>
     </div>
   <% end %>
