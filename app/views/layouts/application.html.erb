@@ -36,13 +36,21 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#home">Profesores</a></li>
-                  <li><a href="#features">Materias</a></li>
-                  <li><a href="#products">Vinculaciones</a></li>
-                  <li><a href="#products">Documentos</a></li>
-                  <li><a href="#products">Anuncios</a></li>
+                <% if current_user.present? %>
+                  <li><a href="./users">Usuarios</a></li>
+                <% end %>
+                <li><%= link_to 'Profesores', professors_url %></li>
+                <li><%= link_to 'Materias', courses_url %></li>
+                <li><%= link_to 'Vinculaciones', links_url %></li>
+                <% if current_user.present? %>
+                  <li><%= link_to 'Documentos', documents_url %></li>
+                  <li><%= link_to 'Anuncios', announcements_url %></li>
+                <% end %>
+                <% if !current_user.present? %>
                   <li><%= link_to 'Iniciar Sesion', new_user_session_url %></li>
-                  <li><%= link_to 'Cerrar Sesion', destroy_user_session_url %></li>
+                <% else %>
+                  <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
+                <% end %>
               </ul>
           </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
