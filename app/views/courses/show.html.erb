@@ -1,47 +1,51 @@
 <div class="container">
+  <h1 class="title">Curso</h1>
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
+  <p class="text-center">
+    <strong>Nombre:</strong>
     <%= @course.name %>
   </p>
 
-  <p>
-    <strong>Code:</strong>
+  <p class="text-center">
+    <strong>Clave:</strong>
     <%= @course.code %>
   </p>
 
-  <p>
-    <strong>Clu course:</strong>
+  <p class="text-center">
+    <strong>CLU del Curso:</strong>
     <%= @course.clu_course %>
   </p>
 
-  <p>
-    <strong>Clu laboratory:</strong>
+  <p class="text-center">
+    <strong>CLU del Laboratorio:</strong>
     <%= @course.clu_laboratory %>
   </p>
 
-  <p>
-    <strong>Clu unities:</strong>
+  <p class="text-center">
+    <strong>CLU Unidades:</strong>
     <%= @course.clu_unities %>
   </p>
 
-  <p>
-    <strong>Status:</strong>
+  <p class="text-center">
+    <strong>Activo Este Semestre:</strong>
     <%= @course.status %>
   </p>
 
-  <p>
-    <strong>Type:</strong>
+  <p class="text-center">
+    <strong>Tipo de Curso:</strong>
     <%= @course.course_type %>
   </p>
 
-  <p>
-    <strong>Information:</strong>
+  <p class="text-center">
+    <strong>Información:</strong>
     <%= @course.information %>
   </p>
 
-  <%= link_to 'Edit', edit_course_path(@course) %> |
-  <%= link_to 'Back', courses_path %>
+  <p class="text-center">
+    <%= link_to 'Editar', edit_course_path(@course) , :class => 'btn btn-sm btn-primary'%> |
+    <%= link_to 'Regresar', courses_path, :class => 'btn btn-sm btn-primary' %>
+  </p>
 </div>
+
 
