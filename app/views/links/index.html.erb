@@ -7,31 +7,44 @@
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Participantes</th>
-        <th>Fecha de Inicio</th>
-        <th>Fecha de Cierre</th>
-        <th>Tipo</th>
-        <th>URL</th>
-        <th colspan="3">Acciones</th>
+        <th class="text-center">Nombre</th>
+        <th class="text-center">Descripción</th>
+        <th class="text-center">Participantes</th>
+        <th class="text-center">Fecha de Inicio</th>
+        <th class="text-center">Fecha de Cierre</th>
+        <th class="text-center">Tipo</th>
+        <th class="text-center">URL</th>
+        <th colspan="3" class="text-center">Acciones</th>
       </tr>
     </thead>
     <tbody>
       <% @links.each do |link| %>
         <tr>
-          <td><%= link.name %></td>
-          <td><%= link.description %></td>
-          <td><%= link.participants %></td>
-          <td><%= link.start_date %></td>
-          <td><%= link.end_date %></td>
-          <td><%= link.link_type %></td>
-          <td><%= link.url %></td>
-          <td><%= link_to 'Mostrar', link %></td>
-          <td><%= link_to 'Editar', edit_link_path(link) %></td>
-          <td><%= link_to 'Borrar', link, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
+          <td class="text-center"><%= link.name %></td>
+          <td class="text-center"><%= link.description %></td>
+          <td class="text-center"><%= link.participants %></td>
+          <td class="text-center"><%= link.start_date %></td>
+          <td class="text-center"><%= link.end_date %></td>
+          <td class="text-center"><%= link.link_type %></td>
+          <td class="text-center"><%= link.url %></td>
+          <td class="text-center">
+            <%= link_to link do %>
+              <i class="btn fas fa-eye fa-sm text-primary" aria-hidden="true"></i>
+            <%end%>
+          </td>
+          <td class="text-center">
+            <%= link_to edit_link_path(link) do %>
+              <i class="btn fas fa-edit fa-sm text-primary" aria-hidden="true"></i>
+            <%end%>
+          </td>
+          <td class="text-center">
+            <%= link_to link, method: :delete, data: { confirm: 'Esta Seguro?' } do%>
+              <i class="btn fa fa-trash-alt fa-sm text-danger" aria-hidden="true"></i>
+            <%end%>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+

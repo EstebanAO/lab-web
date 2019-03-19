@@ -7,21 +7,35 @@
   <table class="table table-striped table-bordered">
     <thead>
         <tr>
-        <th>Descripción</th>
-        <th>Fecha</th>
-        <th colspan="3"></th>
+        <th class="text-center">Descripción</th>
+        <th class="text-center">Fecha</th>
+        <th colspan="3" class="text-center">Acciones</th>
       </tr>
     </thead>
       <tbody>
       <% @announcements.each do |announcement| %>
         <tr>
-          <td><%= announcement.description %></td>
-          <td><%= announcement.date %></td>
-          <td><%= link_to 'Mostrar', announcement %></td>
-          <td><%= link_to 'Editar', edit_announcement_path(announcement) %></td>
-          <td><%= link_to 'Borrar', announcement, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
+          <td class="text-center"><%= announcement.description %></td>
+          <td class="text-center"><%= announcement.date %></td>
+          <td class="text-center">
+            <%= link_to announcement do %>
+              <i class="btn fas fa-eye fa-sm text-primary" aria-hidden="true"></i>
+            <%end%>
+          </td>
+          <td class="text-center">
+            <%= link_to edit_announcement_path(announcement) do %>
+              <i class="btn fas fa-edit fa-sm text-primary" aria-hidden="true"></i>
+            <%end%>
+          </td>
+          <td class="text-center">
+            <%= link_to announcement, method: :delete, data: { confirm: 'Esta Seguro?' } do%>
+              <i class="btn fa fa-trash-alt fa-sm text-danger" aria-hidden="true"></i>
+            <%end%>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+
+
