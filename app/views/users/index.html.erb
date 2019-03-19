@@ -1,74 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<h2></h2>
-
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset="utf-8" />
-    <title>Cursos</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  </head>
-
-  <body>
-    <div id="wrapper">
-      <!-- Page Content -->
-      <div id="page-content-wrapper">
-        <div class="container-fluid">
-          <div class="row margin-row">
-            <div class="col-lg-8"></div>
-          </div>
-          <div class="row">
-            <h2>Usuarios</h2>
-            <div class="col-lg-12">
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <div class="pull-left">
-                  <% if @curr_user.admin%>
-                    <%= link_to 'New User', new_user_path %>
-                  <% end %>
-                  </div>
-                  <!-- /Select -->
-                  <!-- Table -->
-
-                  <table class="table table-striped table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Role</th>
-                        <th>Admin</th>
-                        <th colspan="3"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <% @users.each do |user| %>
-                        <tr>
-                          <td><%= user.email %></td>
-                          <td><%= user.admin %></td>
-                          <td><%= link_to 'Show', user %></td>
-                          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-                          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                        </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
-                  <div class="alert alert-warning" role="alert" id="warning_message">
-                    <i class="fas fa-exclamation-triangle"></i> No se han encontrado resultados.</div>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-lg-12 -->
-          </div>
-        </div>
-      </div>
-      <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
-    <!-- JAVASCRIPT -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./../../../js/patient-dashboard.js"></script>
-
-  </body>
-
-</html>
+<div class="container">
+  <h2 class ="title">Usuarios</h2>
+  <p id="notice"><%= notice %></p>
+  <% if @curr_user.admin%>
+    <%= link_to 'Nuevo Usuario', new_user_path, class: "btn btn-primary" %>
+  <% end %>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Rol</th>
+        <th>Administrador</th>
+        <th colspan="3">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.admin %></td>
+          <td><%= link_to 'Mostrar', user %></td>
+          <td><%= link_to 'Editar', edit_user_path(user) %></td>
+          <td><%= link_to 'Borrar', user, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
