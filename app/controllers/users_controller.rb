@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @new_user = false
     @curr_user = current_user
     if !current_user.admin
       @users = [current_user]
@@ -16,10 +17,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @new_user = false
   end
 
   # GET /users/new
   def new
+    @new_user = true
+    @curr_user = current_user
     if current_user.admin
       @user = User.new
     else
@@ -29,12 +33,14 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @new_user = false
     @curr_user = current_user
   end
 
   # POST /users
   # POST /users.json
   def create
+    debugger
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
@@ -83,6 +89,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
+      debugger
       if current_user.admin
         params.require(:user).permit(:password, :admin, :email, :password_confirmation)
       else

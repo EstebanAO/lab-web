@@ -1,4 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
+  def new
+    build_resource
+    yield resource if block_given?
+    respond_with resource
+  end
+
   def create
     build_resource(sign_up_params)
     # profeProfessor.new
@@ -24,5 +30,10 @@ class RegistrationsController < Devise::RegistrationsController
       set_minimum_password_length
       respond_with resource
     end
+  end
+
+  private
+  def sign_up_params
+    params.require(:user).permit(:email, :password, :admin, :password_confirmation) # list every parameter you'd like to register with
   end
 end
