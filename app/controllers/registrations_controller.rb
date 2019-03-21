@@ -9,7 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
     # profeProfessor.new
     prof = Professor.new
-    prof.name = "Nombre"
+    prof.name = resource.email
     prof.email = resource.email
     prof.save
     resource.professor = prof

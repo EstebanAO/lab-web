@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @new_user = false
     @curr_user = current_user
     if !current_user.admin
       @users = [current_user]
@@ -17,12 +16,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @new_user = false
   end
 
   # GET /users/new
   def new
-    @new_user = true
     @curr_user = current_user
     if current_user.admin
       @user = User.new
@@ -33,7 +30,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @new_user = false
     @curr_user = current_user
   end
 
@@ -42,7 +38,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     prof = Professor.new
-    prof.name = "Nombre"
+    prof.name = @user.email
     prof.email = @user.email
     @user.professor = prof
     respond_to do |format|
