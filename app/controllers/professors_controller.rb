@@ -60,10 +60,7 @@ class ProfessorsController < ApplicationController
 
   # DELETE /professors/1
   # DELETE /professors/1.json
-  def destroy
-    # debugger
-    # user_to_destroy = @professor.user
-    # user_to_destroy.destroy
+  def destroys
     @professor.destroy
     respond_to do |format|
       format.html { redirect_to professors_url, notice: 'Professor was successfully destroyed.' }
