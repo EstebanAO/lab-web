@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   # GET /links
   # GET /links.json
@@ -70,6 +71,12 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:name, :description, :participants, :start_date, :end_date, :type, :url)
+      params.require(:link).permit(:name, :description, :participants, :start_date, :end_date, :link_type, :url)
+    end
+
+    def check_admin
+      unless current_user.admin
+        redirect_to root_path
+      end
     end
 end

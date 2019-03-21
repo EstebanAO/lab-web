@@ -9,7 +9,7 @@
 
   <p class="text-center">
     <strong>Fecha:</strong>
-    <%= @announcement.date %>
+    <%= @announcement.date.strftime("%I:%M %d-%m-%Y")  %>
   </p>
 
   <p class="text-center">
@@ -17,5 +17,3 @@
       <%= link_to 'Regresar', announcements_path, :class => 'btn btn-sm btn-primary' %>
   </p>
 </div>
-
-

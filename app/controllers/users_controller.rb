@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @curr_user = current_user
     if current_user.admin
       @user = User.new
     else
@@ -36,8 +37,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    prof = Professor.new
+    prof.name = @user.email
+    prof.email = @user.email
+    @user.professor = prof
     respond_to do |format|
-      if @user.save
+      if @user.save && prof.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
