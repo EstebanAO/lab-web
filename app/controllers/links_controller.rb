@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
-  before_action :check_admin, only: [:new, :create]
+  before_action :check_admin, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   # GET /links
   # GET /links.json
