@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_14_044048) do
+ActiveRecord::Schema.define(version: 2019_03_20_055952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,5 @@ ActiveRecord::Schema.define(version: 2019_03_14_044048) do
 
   add_foreign_key "announcements", "professors"
   add_foreign_key "documents", "professors"
-  add_foreign_key "professors", "users"
   add_foreign_key "users", "professors"
 end

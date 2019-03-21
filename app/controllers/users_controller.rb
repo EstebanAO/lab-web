@@ -40,10 +40,13 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    debugger
     @user = User.new(user_params)
+    prof = Professor.new
+    prof.name = "Nombre"
+    prof.email = @user.email
+    @user.professor = prof
     respond_to do |format|
-      if @user.save
+      if @user.save && prof.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -89,7 +92,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      debugger
       if current_user.admin
         params.require(:user).permit(:password, :admin, :email, :password_confirmation)
       else
