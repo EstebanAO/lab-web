@@ -9,12 +9,12 @@
     <tr>
       <th class="text-center">Nombre</th>
       <th class="text-center">Clave</th>
-      <th class="text-center">CLU Materias</th>
-      <th class="text-center">CLU Laboratorio</th>
-      <th class="text-center">CLU Unidades</th>
-      <th class="text-center">Activo Este Semestre</th>
-      <th class="text-center">Tipo</th>
-      <th class="text-center">Información</th>
+      <th class="text-center table-hidde">CLU Materias</th>
+      <th class="text-center table-hidde">CLU Laboratorio</th>
+      <th class="text-center table-hidde">CLU Unidades</th>
+      <th class="text-center table-hidde">Activo Este Semestre</th>
+      <th class="text-center table-hidde">Tipo</th>
+      <th class="text-center table-hidde">Información</th>
       <th colspan="3" class="text-center">Acciones</th>
     </tr>
   </thead>
@@ -23,12 +23,12 @@
       <tr>
         <td class="text-center"><%= course.name %></td>
         <td class="text-center"><%= course.code %></td>
-        <td class="text-center"><%= course.clu_course %></td>
-        <td class="text-center"><%= course.clu_laboratory %></td>
-        <td class="text-center"><%= course.clu_unities %></td>
-        <td class="text-center"><%= course.status %></td>
-        <td class="text-center"><%= course.course_type %></td>
-        <td class="text-center"><%= course.information %></td>
+        <td class="text-center table-hidde"><%= course.clu_course %></td>
+        <td class="text-center table-hidde"><%= course.clu_laboratory %></td>
+        <td class="text-center table-hidde"><%= course.clu_unities %></td>
+        <td class="text-center table-hidde"><%= course.status %></td>
+        <td class="text-center table-hidde"><%= course.course_type %></td>
+        <td class="text-center table-hidde"><%= course.information %></td>
         <td class="text-center">
           <%= link_to course do %>
             <i class="btn fas fa-eye fa-sm text-primary" aria-hidden="true"></i>
