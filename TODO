@@ -1,20 +1,24 @@
-BACK   - ESTEBAN ROIZ
+FRONT    - ALDO Y HECTOR
+- MEJORAR LAS TABLAS Y QUITAR LAS COSAS QUE NO SIRVEN
+- PONER ICONOS EN LAS TABLAS
+- RESPONSIVO LA TABLA
+- CAMBIAR A H2
+- TRADUCCIR TODO (Botones de la tabla, tablas, flase y true)
+- Que no salgan los botones de  "NEW PROFESOR" ...
 
-actualizar roles
-profesores recien creados inactivos
-autentificar rutas
-gema auth
+BACK - ESTEBAN Y ALEX
+Cuando eres un profesor 
+- Que no se vean todos los links unicamente los que el pueda usar
+- Que no pueda hacer una materia (/new debe estar prohibido)
+- Que no pueda hacer una vinculacion (/new debe estar prohibido)
+- Cuando guardas el usuario en modo editar y no le pones contraseña te manda error, (deberias de poder salir sin cambios)
+- Validar cada documento este linkeado a un profesor
+- Validar que cada anuncio este linkeado a un profesor
+- Remover el campo de fecha en el form ya que este debe ser autogenerado el dia y la hora en que se creo el anuncio
+- Vinculaciones esta tronando porque el type debe ser link_type
 
 
-FRONT    - ALDO HECTOR
-
-hamburger menu
-  jquery
-bajar footer
-front "bonito" CRUDS
-LOGO
-links background negro
 
 
-navbar
-  cambiar links
+
+

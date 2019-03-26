@@ -1,10 +1,17 @@
 class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin_or_current, only: [:show, :edit, :update]
+  before_action :prevent_new, only: [:new, :create]
 
   # GET /professors
   # GET /professors.json
   def index
-    @professors = Professor.all
+    @curr_user = current_user
+    if current_user.admin
+      @professors = Professor.all
+    else
+      @professors = [current_user.professor]
+    end
   end
 
   # GET /professors/1
@@ -53,7 +60,7 @@ class ProfessorsController < ApplicationController
 
   # DELETE /professors/1
   # DELETE /professors/1.json
-  def destroy
+  def destroys
     @professor.destroy
     respond_to do |format|
       format.html { redirect_to professors_url, notice: 'Professor was successfully destroyed.' }
@@ -69,6 +76,16 @@ class ProfessorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
-      params.require(:professor).permit(:name, :father_last_name, :mother_last_name, :email, :office, :resume, :type)
+      params.require(:professor).permit(:name, :father_last_name, :mother_last_name, :email, :office, :resume, :professor_type)
+    end
+
+    def check_admin_or_current
+      unless current_user.admin || current_user.id.to_s == Professor.find(params[:id]).user_id.to_s
+        redirect_to root_path
+      end
+    end
+
+    def prevent_new
+      redirect_to root_path
     end
 end

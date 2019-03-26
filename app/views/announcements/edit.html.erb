@@ -1,6 +1,11 @@
-<h1>Editing Announcement</h1>
+<div class="container">
+    <h2 class="title">Editar Anuncio</h2>
 
-<%= render 'form', announcement: @announcement %>
+    <%= render 'form', announcement: @announcement %>
 
-<%= link_to 'Show', @announcement %> |
-<%= link_to 'Back', announcements_path %>
+    <p class="text-center">
+        <%= link_to 'Mostrar', @announcement , :class => 'btn btn-sm btn-primary btn-primary' %> |
+        <%= link_to 'Regresar', announcements_path, :class => 'btn btn-sm btn-primary btn-primary' %>
+    </p>
+</div>
+

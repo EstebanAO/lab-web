@@ -1,52 +1,54 @@
-<%= form_with(model: link, local: true) do |form| %>
-  <% if link.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
+<div class="container">
+  <%= form_with(html:{ class:"form" } ,model: link, local: true) do |form| %>
+    <% if link.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
 
-      <ul>
-      <% link.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% link.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :Nombre %>
+      <%= form.text_field :name, class:"form-control" , placeholder: "Nombre"  %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :Descripción %>
+      <%= form.text_field :description, class:"form-control" , placeholder: "Descripción"  %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :Participantes %>
+      <%= form.text_field :participants, class:"form-control" , placeholder: "Participantes"  %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :Fecha_de_Inicio %>
+      <%= form.datetime_select :start_date %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :Fecha_de_Cierre %>
+      <%= form.datetime_select :end_date %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :Tipo_de_Proyecto %>
+      <%= form.select :link_type, ['Interno', 'Externo'] , class:"form-control"%>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :URL %>
+      <%= form.text_field :url, class:"form-control" , placeholder: "URL"%>
+    </div>
+
+   <div class="actions">
+      <%= form.submit 'Guardar', :class => 'btn btn-lg btn-primary btn-block' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :participants %>
-    <%= form.text_field :participants %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.number_field :type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h2 class="title">Mostrar Anuncio</h2>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @announcement.description %>
-</p>
+  <p class="text-center">
+    <strong>Descripción:</strong>
+    <%= @announcement.description %>
+  </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @announcement.date %>
-</p>
+  <p class="text-center">
+    <strong>Fecha:</strong>
+    <%= @announcement.date.strftime("%I:%M %d-%m-%Y")  %>
+  </p>
 
-<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
-<%= link_to 'Back', announcements_path %>
+  <p class="text-center">
+      <%= link_to 'Editar', edit_announcement_path(@announcement) , :class => 'btn btn-sm btn-primary'%> |
+      <%= link_to 'Regresar', announcements_path, :class => 'btn btn-sm btn-primary' %>
+  </p>
+</div>

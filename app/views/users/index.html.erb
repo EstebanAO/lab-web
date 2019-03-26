@@ -1,30 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Password</th>
-      <th>Role</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+<div class="container">
+  <h2 class ="title">Usuarios</h2>
+  <p id="notice"><%= notice %></p>
+  <% if @curr_user.admin%>
+    <%= link_to 'Nuevo Usuario', new_user_path, class: "btn btn-primary" %>
+  <% end %>
+  <table class="table table-striped table-bordered">
+    <thead>
       <tr>
-        <td><%= user.password %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></td>
+        <th class="text-center">Rol</th>
+        <th class="text-center">Administrador</th>
+        <th colspan="3" class="text-center">Acciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td class="text-center"><%= user.email %></td>
+          <td class="text-center"><%= user.admin %></td>
+          <td class="text-center">
+            <%= link_to user do %>
+              <i class="btn fas fa-eye fa-sm text-primary" aria-hidden="true"></i>
+            <%end%>
+          </td>
+          <td class="text-center">
+            <%= link_to edit_user_path(user) do %>
+              <i class="btn fas fa-edit fa-sm text-primary" aria-hidden="true"></i>
+            <%end%>
+          </td>
+          <td class="text-center">
+            <%= link_to user, method: :delete, data: { confirm: 'Esta Seguro?' } do%>
+              <i class="btn fa fa-trash-alt fa-sm text-danger" aria-hidden="true"></i>
+            <%end%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<br>
 
-<%= link_to 'New User', new_user_path %>

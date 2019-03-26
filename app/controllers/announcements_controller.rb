@@ -1,9 +1,16 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:new, :create]
+
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all
+    @curr_user = current_user
+    if current_user.admin
+      @announcements = Announcement.all
+    else
+      @announcements = Announcement.where(professor_id: current_user.professor.id)
+    end
   end
 
   # GET /announcements/1
@@ -24,6 +31,8 @@ class AnnouncementsController < ApplicationController
   # POST /announcements.json
   def create
     @announcement = Announcement.new(announcement_params)
+    @announcement.professor = current_user.professor
+    @announcement.date = DateTime.now()
 
     respond_to do |format|
       if @announcement.save
@@ -68,6 +77,12 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params.require(:announcement).permit(:description, :date)
+      params.require(:announcement).permit(:description)
+    end
+
+    def check_admin
+      unless !current_user.admin
+        redirect_to root_path
+      end
     end
 end

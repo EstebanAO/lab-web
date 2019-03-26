@@ -1,9 +1,11 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   # GET /courses
   # GET /courses.json
   def index
     @courses = Course.all
+    @curr_user = current_user
   end
 
   # GET /courses/1
@@ -68,6 +70,12 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :code, :clu_course, :clu_laboratory, :clu_unities, :status, :type, :information)
+      params.require(:course).permit(:name, :code, :clu_course, :clu_laboratory, :clu_unities, :status, :course_type, :information)
+    end
+
+    def check_admin
+      unless current_user.admin
+        redirect_to root_path
+      end
     end
 end

@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h2 class="title">Mostrar Documento</h2>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @document.description %>
-</p>
+  <p class="text-center">
+    <strong>Descripción:</strong>
+    <%= @document.description %>
+  </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @document.url %>
-</p>
+  <p class="text-center">
+    <strong>URL:</strong>
+    <%= @document.url %>
+  </p>
 
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+   <p class="text-center">
+      <%= link_to 'Editar', edit_document_path(@document) , :class => 'btn btn-sm btn-primary'%> |
+      <%= link_to 'Regresar', documents_path, :class => 'btn btn-sm btn-primary' %>
+  </p>
+</div>
+
+

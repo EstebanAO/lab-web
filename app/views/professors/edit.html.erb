@@ -1,6 +1,10 @@
-<h1>Editing Professor</h1>
+<div class="container">
+    <h2 class="title">Editar Profesor</h2>
 
-<%= render 'form', professor: @professor %>
-
-<%= link_to 'Show', @professor %> |
-<%= link_to 'Back', professors_path %>
+    <%= render 'form', professor: @professor %>
+    
+    <p class="text-center">
+        <%= link_to 'Mostrar', @professor , :class => 'btn btn-sm btn-primary btn-primary' %> |
+        <%= link_to 'Regresar', professors_path, :class => 'btn btn-sm btn-primary btn-primary' %>
+    </p>
+</div>

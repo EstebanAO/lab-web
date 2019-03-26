@@ -1,6 +1,11 @@
-<h1>Editing Link</h1>
+<div class="container">
+    <h2 class="title">Editar Vinculación</h2>
 
-<%= render 'form', link: @link %>
+    <%= render 'form', link: @link %>
 
-<%= link_to 'Show', @link %> |
-<%= link_to 'Back', links_path %>
+    <p class="text-center">
+        <%= link_to 'Mostrar', @link , :class => 'btn btn-sm btn-primary btn-primary' %> |
+        <%= link_to 'Regresar', links_path, :class => 'btn btn-sm btn-primary btn-primary' %>
+    </p>
+</div>
+

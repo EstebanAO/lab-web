@@ -1,9 +1,16 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:new, :create]
+
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.all
+    @curr_user = current_user
+    if current_user.admin
+      @documents = Document.all
+    else
+      @documents = Document.where(professor_id: current_user.professor.id)
+    end
   end
 
   # GET /documents/1
@@ -24,7 +31,7 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(document_params)
-
+    @document.professor = current_user.professor
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
@@ -69,5 +76,11 @@ class DocumentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
       params.require(:document).permit(:description, :url)
+    end
+
+    def check_admin
+      unless !current_user.admin
+        redirect_to root_path
+      end
     end
 end

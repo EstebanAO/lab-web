@@ -1,27 +1,24 @@
-<%= form_with(model: announcement, local: true) do |form| %>
-  <% if announcement.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
+<div class="container">
+  <%= form_with(html:{ class:"form" } ,model: announcement, local: true) do |form| %>
+    <% if announcement.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
 
-      <ul>
-      <% announcement.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% announcement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :Descripción %>
+      <%= form.text_field :description, class:"form-control" , placeholder: "Descripción"  %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Guardar', :class => 'btn btn-lg btn-primary btn-block' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,41 +1,51 @@
+<div class="container">
+<h2 class ="title">Materias</h2>
 <p id="notice"><%= notice %></p>
-
-<h1>Courses</h1>
-
-<table>
+<% if @curr_user.admin%>
+    <%= link_to 'Nueva Materia', new_course_path, class: "btn btn-primary" %>
+  <% end %>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Code</th>
-      <th>Clu course</th>
-      <th>Clu laboratory</th>
-      <th>Clu unities</th>
-      <th>Status</th>
-      <th>Type</th>
-      <th>Information</th>
-      <th colspan="3"></th>
+      <th class="text-center">Nombre</th>
+      <th class="text-center">Clave</th>
+      <th class="text-center table-hidde">CLU Materias</th>
+      <th class="text-center table-hidde">CLU Laboratorio</th>
+      <th class="text-center table-hidde">CLU Unidades</th>
+      <th class="text-center table-hidde">Activo Este Semestre</th>
+      <th class="text-center table-hidde">Tipo</th>
+      <th class="text-center table-hidde">Información</th>
+      <th colspan="3" class="text-center">Acciones</th>
     </tr>
   </thead>
-
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.name %></td>
-        <td><%= course.code %></td>
-        <td><%= course.clu_course %></td>
-        <td><%= course.clu_laboratory %></td>
-        <td><%= course.clu_unities %></td>
-        <td><%= course.status %></td>
-        <td><%= course.type %></td>
-        <td><%= course.information %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="text-center"><%= course.name %></td>
+        <td class="text-center"><%= course.code %></td>
+        <td class="text-center table-hidde"><%= course.clu_course %></td>
+        <td class="text-center table-hidde"><%= course.clu_laboratory %></td>
+        <td class="text-center table-hidde"><%= course.clu_unities %></td>
+        <td class="text-center table-hidde"><%= course.status %></td>
+        <td class="text-center table-hidde"><%= course.course_type %></td>
+        <td class="text-center table-hidde"><%= course.information %></td>
+        <td class="text-center">
+          <%= link_to course do %>
+            <i class="btn fas fa-eye fa-sm text-primary" aria-hidden="true"></i>
+          <%end%>
+        </td>
+        <td class="text-center">
+          <%= link_to edit_course_path(course) do %>
+            <i class="btn fas fa-edit fa-sm text-primary" aria-hidden="true"></i>
+          <%end%>
+        </td>
+        <td class="text-center">
+          <%= link_to course, method: :delete, data: { confirm: 'Esta Seguro?' } do%>
+            <i class="btn fa fa-trash-alt fa-sm text-danger" aria-hidden="true"></i>
+          <%end%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Course', new_course_path %>
+</div>        
