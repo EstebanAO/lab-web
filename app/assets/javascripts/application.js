@@ -16,7 +16,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require index
 $(document).ready(function () {
 
   $('.navbar-collapse ul li a').click(function () {
