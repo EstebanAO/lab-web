@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :announcements
   resources :documents
   resources :professors
-  get '/professors/:id/show_card' => 'professors#show_card', :as => '/show_card'
+  get '/:id/show_card' => 'professors#show_card', :as => '/show_card'
   resources :courses
   resources :links
 end
