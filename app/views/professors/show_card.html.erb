@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="title">Mostrar Profesor</h2>
+  <p id="notice"><%= notice %></p>
+
+  <p class="text-center">
+    <strong>Nombre:</strong>
+    <%= @professor.name %>
+  </p>
+
+  <p class="text-center">
+    <strong>Apellido Paterno:</strong>
+    <%= @professor.father_last_name %>
+  </p>
+
+  <p class="text-center">
+    <strong>Apellido Materno:</strong>
+    <%= @professor.mother_last_name %>
+  </p>
+
+  <p class="text-center">
+    <strong>Correo:</strong>
+    <%= @professor.email %>
+  </p>
+
+  <p class="text-center">
+    <strong>Oficina:</strong>
+    <%= @professor.office %>
+  </p>
+
+  <p class="text-center">
+    <strong>CV:</strong>
+    <%= @professor.resume %>
+  </p>
+
+  <p class="text-center">
+    <strong>Tipo de Profesor:</strong>
+    <%= @professor.professor_type %>
+  </p>
+</div>
