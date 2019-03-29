@@ -11,11 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery2
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-console.log("HOLA");
+//= require index
 $(document).ready(function () {
 
   $('.navbar-collapse ul li a').click(function () {
@@ -35,3 +36,7 @@ $(document).ready(function () {
     }
   });
 });
+
+
+
+

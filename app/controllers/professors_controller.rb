@@ -68,6 +68,11 @@ class ProfessorsController < ApplicationController
     end
   end
 
+  # SHOW PROFESSOR CARD
+  def show_card
+    @professors = Professor.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_professor
