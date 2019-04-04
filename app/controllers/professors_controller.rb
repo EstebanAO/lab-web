@@ -1,7 +1,7 @@
 class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
   before_action :check_admin_or_current, only: [:show, :edit, :update]
-  before_action :check_admin, only: [:new, :create]
+  before_action :prevent_new, only: [:new, :create]
 
   # GET /professors
   # GET /professors.json
@@ -60,7 +60,7 @@ class ProfessorsController < ApplicationController
 
   # DELETE /professors/1
   # DELETE /professors/1.json
-  def destroy
+  def destroys
     @professor.destroy
     respond_to do |format|
       format.html { redirect_to professors_url, notice: 'Professor was successfully destroyed.' }
@@ -90,9 +90,7 @@ class ProfessorsController < ApplicationController
       end
     end
 
-    def check_admin
-      unless current_user.admin
-        redirect_to root_path
-      end
+    def prevent_new
+      redirect_to root_path
     end
 end

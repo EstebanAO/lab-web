@@ -16,7 +16,7 @@
       <% @announcements.each do |announcement| %>
         <tr>
           <td class="text-center"><%= announcement.description %></td>
-          <td class="text-center"><%= announcement.date %></td>
+          <td class="text-center"><%= announcement.date.strftime("%I:%M %d-%m-%Y") %></td>
           <td class="text-center">
             <%= link_to announcement do %>
               <i class="btn fas fa-eye fa-sm text-primary" aria-hidden="true"></i>
@@ -37,5 +37,3 @@
     </tbody>
   </table>
 </div>
-
-

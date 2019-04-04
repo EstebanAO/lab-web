@@ -32,6 +32,7 @@ class AnnouncementsController < ApplicationController
   def create
     @announcement = Announcement.new(announcement_params)
     @announcement.professor = current_user.professor
+    @announcement.date = DateTime.now()
 
     respond_to do |format|
       if @announcement.save
@@ -76,7 +77,7 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params.require(:announcement).permit(:description, :date)
+      params.require(:announcement).permit(:description)
     end
 
     def check_admin
