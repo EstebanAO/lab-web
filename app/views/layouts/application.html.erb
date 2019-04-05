@@ -48,6 +48,8 @@
                   <% end %>
                 <% end %>
                 <% if !current_user.present? %>
+                  <li><%= link_to 'Profesor', show_professor_path %></li>
+                  <li><%= link_to 'Usuarios', users_url %></li>
                   <li><%= link_to 'Iniciar Sesion', new_user_session_url %></li>
                 <% else %>
                   <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>

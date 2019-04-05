@@ -41,9 +41,9 @@ p {
 section {
     padding: 20px 0 40px 0;
 }
- 
- 
- 
+
+
+
 /*---------- NAV ----------*/
 .navbar {
   margin-bottom: 0;
@@ -66,7 +66,7 @@ section {
   font-size: 15px;
   background-color: transparent;
 }
- 
+
 @media (min-width: 1200px){
   .nav li a:after {
     display: block;
@@ -88,7 +88,7 @@ section {
             transform-origin: 0 50%;
   }
 }
- 
+
 .icon-bar {
     display: block;
     width: 15px;
@@ -117,7 +117,7 @@ section {
 
 
 /*------- HEADER ------------*/
- 
+
  header {
    position: relative;
    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://tec.mx/sites/default/files/styles/header_full/public/2019-02/estudiaposgrados.jpg?itok=Ei8Pl4SZ);
@@ -130,7 +130,7 @@ section {
    width: 100%;
    text-align: center;
  }
- 
+
  .text-box {
      position: absolute;
      width: 90%;
@@ -139,7 +139,7 @@ section {
      -webkit-transform: translate(-50%, -50%);
      transform: translate(-50%, -50%)
  }
- 
+
  h1 {
    font-family: 'Philosopher', sans-serif;
    font-size: 250%;
@@ -152,19 +152,19 @@ section {
    margin-top: 50px;
    margin-bottom: 10px;
  }
- 
+
  .text-box p {
    text-align: center;
    font-style: italic;
    margin-bottom: 30px;
  }
- 
+
  /*----------- FEATURE SECTION -------*/
- 
+
  .section-features {
    text-align: center;
  }
- 
+
  h2 {
    font-size: 180%;
    word-spacing: 2px;
@@ -174,7 +174,7 @@ section {
    text-transform: uppercase;
    text-align: center;
  }
- 
+
  h2:after {
    display: block;
    height: 2px;
@@ -184,24 +184,24 @@ section {
    margin: 0 auto;
    margin-top: 30px;
  }
- 
+
  h3 {
    font-size: 110%;
    margin-bottom: 15px;
    text-transform: uppercase;
    color: #9aa4a5;
  }
- 
+
  .icon-p {
    margin-top: 30px;
    font-size: 250%;
    color: #003366;
  }
- 
- 
- 
+
+
+
  /*--------FOOTER -------*/
- 
+
 
  footer {
    padding: 20px;
@@ -211,39 +211,39 @@ section {
    left: 0;
    bottom: 0;
  }
- 
+
  .footer-nav {
    list-style: none;
    font-size: 80%;
  }
- 
+
  .footer-nav h4,
  .contact {
    font-size: 120%;
  }
- 
+
  footer p {
    font-size: 75%;
  }
- 
+
  footer a:link,
  footer a:visited {
    color: #eef3ff;
    transition: 0.3s;
    margin-top: 5px;;
  }
- 
+
  footer a:hover,
  footer a:active {
    color: #9eb9ff;
    text-decoration: none;
  }
- 
+
  hr {
    width: 60%;
    margin: 10px auto;
  }
- 
+
 
 @media (max-width: 1100px){
   .table-hidde{
@@ -253,7 +253,7 @@ section {
 
 @media (max-width: 1200px) {
   section { padding: 30px 0; }
-  
+
   .navbar-toggle {
     margin: 0 4px 0 0;
   }
@@ -261,22 +261,22 @@ section {
     padding: 0 4%;
     width: 80%;
   }
-  
+
   .nav li a:hover {
     color: #9eb9ff;
 }
-  
+
   body { font-size: 16px; }
   section { padding: 30px 0; }
-  
-  
+
+
   h1 {
     font-size: 180%;
     padding: 10px;
     margin-top: 0;
-  }   
+  }
 }
- 
+
 @media (max-width: 480px) {
   section { padding: 25px 0; }
   .btn:link,
@@ -292,15 +292,15 @@ section {
     margin: 0;
     font-size: 160%;
   }
-  
+
   .text-box p {
     font-size: 80%;
     margin-bottom: 8px;
   }
-  
+
   h2 {
     margin-top: 40px;
-  }  
+  }
 }
 
 
@@ -339,4 +339,10 @@ section {
   .collapse.in{
       display:block !important;
   }
+}
+
+.subtitle{
+  margin-top: 30px;
+  text-align: center;
+  color:#3e4546;
 }

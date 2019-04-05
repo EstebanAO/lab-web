@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  root to: "professors_grid#index", data: { no_turbolink: true }
+  root to: "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}, :path => 'user_create'
   resources :users
-  get '/professors/:id/show_card' => 'professors#show_card', :as => '/show_card'
+  get '/home/:id/professor' => 'home#professor', :as => '/professor'
+  get '/home/show_professor' => 'home#show_professor', :as => '/show_professor'
+
   resources :announcements
   resources :documents
   resources :professors
   resources :courses
   resources :links
+  resources :homes
 end
