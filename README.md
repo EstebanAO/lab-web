@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+#How to create an Admin
+ > rails console
+ > a = User.last
+ > a.admin = true
+ > a.save
