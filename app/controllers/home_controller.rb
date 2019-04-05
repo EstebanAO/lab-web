@@ -6,8 +6,18 @@ class HomeController < ApplicationController
   def professor
     @professor = Professor.find(params[:id])
   end
+ 
+ def show_professor
+  if params[:search]
+      @professors = Professor.where('name LIKE ? OR father_last_name LIKE ? OR mother_last_name LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      @professors = Professor.all
+    end
+end
 
-  def show_professor
-    @professors = Professor.all
+private
+
+def professor_params
+    params.require(:professor).permit(:name, :father_last_name, :mother_last_name, :search)
   end
 end
