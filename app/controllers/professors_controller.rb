@@ -1,5 +1,5 @@
 class ProfessorsController < ApplicationController
-  before_action :set_professor, only: [:show, :edit, :update, :destroy]
+  before_action :set_professor, only: [:show, :edit, :update, :destroy, :show_card]
   before_action :check_admin_or_current, only: [:show, :edit, :update]
   before_action :prevent_new, only: [:new, :create]
 
@@ -70,7 +70,6 @@ class ProfessorsController < ApplicationController
 
   # SHOW PROFESSOR CARD
   def show_card
-    @professors = Professor.all
   end
 
   private

@@ -1,0 +1,22 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h2 class="title">Lista de profesores</h2>
+  <%= form_tag(professors_grid_path, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+  <% end %>
+  <div class="cards">
+    <% @professors.each do |professor| %>
+        <div class="card">
+         <%= link_to professor_path(professor) do %>
+            <div class="card__inner">
+              <i class="fa fa-user-tie"></i>
+              <p><%= professor.name %> <%= professor.father_last_name %> <%= professor.mother_last_name %></p>
+            </div>
+          <%end%>
+        </div>
+    <%end%>
+  </div>
+</div>
+
+
