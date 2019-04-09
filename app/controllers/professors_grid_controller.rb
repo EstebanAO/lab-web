@@ -1,5 +1,16 @@
 class ProfessorsGridController < ApplicationController
 	def index
-		@professors=Professor.all
+		if params[:search]
+    		@professors = Professor.where('name LIKE ?', "%#{params[:search]}%")
+    		debugger
+  		else
+    		@professors = Professor.all
+    	end
 	end
+
+	private
+
+	def professor_params
+      params.require(:professor).permit(:name, :search)
+    end
 end
