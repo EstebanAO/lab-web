@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.search-bar{
+  justify-content: center;
+  display: flex;
+}
+
 .cards {
   padding: 15px;
   display: flex;
@@ -26,7 +31,7 @@
 }
 
 .card:hover .card__inner {
-  background-color: #003366;
+  background-color: #212121;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -36,7 +41,7 @@
   padding: 30px;
   position: relative;
   cursor: pointer;
-  background-color: #949fb0;
+  background-color: #003366;
   color: #eceef1;
   font-size: 1.5em;
   text-transform: uppercase;
