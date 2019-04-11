@@ -80,7 +80,7 @@ class ProfessorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
-      params.require(:professor).permit(:name, :father_last_name, :mother_last_name, :email, :office, :resume, :professor_type)
+      params.require(:professor).permit(:name, :father_last_name, :mother_last_name, :professor_type, :email, :office, :resume)
     end
 
     def check_admin_or_current
