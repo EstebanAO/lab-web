@@ -9,7 +9,8 @@
     </div>
     <%= form_tag(professors_grid_path, method: :get) do %>
       <p>
-        <%= select_tag :search,"<option>Catedra</option><option>Nombre</option>".html_safe, :onchange => "this.form.submit();"%>
+        <%= select_tag :search,"<option>Catedra</option><option>Planta</option>".html_safe %>
+        <%= submit_tag "Buscar",:class=>"btn btn-outline-secondary" %>
      </p>
     <% end %>
   </select>
