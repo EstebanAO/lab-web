@@ -7,6 +7,12 @@
         <%= submit_tag "Buscar",:class=>"btn btn-outline-secondary" %>
       <% end %>
     </div>
+    <%= form_tag(show_professor_path, method: :get) do %>
+      <p>
+        <%= select_tag :search,"<option>Catedra</option><option>Planta</option>".html_safe %>
+        <%= submit_tag "Buscar",:class=>"btn btn-outline-secondary" %>
+     </p>
+    <% end %>
   <div class="cards">
     <% @professors.each do |professor| %>
         <div class="card">

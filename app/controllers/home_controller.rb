@@ -7,13 +7,20 @@ class HomeController < ApplicationController
     @professor = Professor.find(params[:id])
   end
  
- def show_professor
-  if params[:search]
-      @professors = Professor.where('name LIKE ? OR father_last_name LIKE ? OR mother_last_name LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
-    else
-      @professors = Professor.all
+  def show_professor
+    if params[:search] == "Catedra"
+        search_i = 1
+      else if params[:search] == "Planta"
+        search_i = 0
+      end
     end
-end
+    if params[:search]
+      @professors = Professor.where('name LIKE ? OR father_last_name LIKE ? OR mother_last_name LIKE ? OR professor_type = ?', 
+        "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", search_i)
+      else
+        @professors = Professor.all
+      end
+  end
 
 private
 
