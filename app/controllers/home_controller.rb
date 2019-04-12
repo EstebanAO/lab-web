@@ -10,9 +10,9 @@ class HomeController < ApplicationController
   def show_professor
     # debugger
     if params[:professor_type] == "Catedra" then
-      search_i = 0
-    elsif params[:professor_type] == "Planta"
       search_i = 1
+    elsif params[:professor_type] == "Planta"
+      search_i = 0
     elsif  params[:professor_type] == "All"
       search_i = 2
     end
