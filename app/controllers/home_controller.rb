@@ -28,9 +28,20 @@ class HomeController < ApplicationController
     end
   end
 
+  def courses
+    @course = Course.find(params[:id])
+  end
+
+  def show_course
+  end
+
 private
 
-def professor_params
+  def professor_params
     params.require(:professor).permit(:name, :father_last_name, :mother_last_name, :search, :professor_type)
   end
+
+  def course_params
+  end
 end
+
