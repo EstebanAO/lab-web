@@ -29,10 +29,22 @@ class HomeController < ApplicationController
   end
 
   def courses
-    @course = Course.find(params[:id])
+    @course = Course.all
   end
 
   def show_course
+    if params[:status] == "Activo" then
+      active_i = 1
+    elsif params[:status] == "No activo"
+      active_i = 0
+    end
+    if params[:search] && active_i == 1
+      @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", search_i)
+    elsif params[:search] && active_i == 0
+      @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", search_i)
+    else
+      @courses = Course.all
+    end
   end
 
 private
@@ -42,6 +54,7 @@ private
   end
 
   def course_params
+    params.require(:course).permit(:name, :search, :status)
   end
 end
 
