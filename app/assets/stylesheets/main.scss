@@ -346,3 +346,29 @@ section {
   text-align: center;
   color:#3e4546;
 }
+
+/* COMMENTS */
+
+#comments {
+  background-color:#FFF;
+  padding:1rem 2rem;
+}
+.comment {
+  position:relative; 
+  margin:2rem 2rem 2rem 2rem;
+  background-color:#EEE; 
+  border:2px solid #AAA; 
+  -webkit-border-radius:0.25rem; 
+  -moz-border-radius:0.25rem; 
+  border-radius:0.25rem; 
+  font-size:10pt;
+}
+.username {
+  position:absolute;
+  top:-1.5em;
+  left:0;
+  font-weight:bold;
+}
+.comment p {
+  margin:0.5rem 0.5rem 0.5rem 2rem;
+}

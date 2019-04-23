@@ -33,6 +33,14 @@
 <section id="contact">
     <div class="row">
         <h2>Anuncios</h2>
+        <div class="row" style="height: 300px; overflow-y: scroll;">
+            <% @announcements.each do |announcement| %>
+                <div class="comment">
+                    <div class="username">Nombre completo del Profe -- Fecha de publicación</div>
+                    <p>Contenido del anuncio</p>
+                </div>
+            <% end %>
+        </div>
     </div>
     <div class="row">
     </div>
