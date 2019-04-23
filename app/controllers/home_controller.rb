@@ -39,9 +39,9 @@ class HomeController < ApplicationController
       active_i = 0
     end
     if params[:search] && active_i == 1
-      @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", search_i)
+      @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", true)
     elsif params[:search] && active_i == 0
-      @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", search_i)
+      @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", false)
     else
       @courses = Course.all
     end
