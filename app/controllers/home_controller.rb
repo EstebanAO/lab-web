@@ -39,17 +39,30 @@ class HomeController < ApplicationController
       active_i = 0
     end
     if params[:search] && active_i == 1
-<<<<<<< HEAD
-      @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", active_i)
-    elsif params[:search] && active_i == 0
-      @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", active_i)
-=======
       @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", true)
     elsif params[:search] && active_i == 0
       @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", false)
->>>>>>> dd59746687a53d35836989147017e2f12e269497
     else
       @courses = Course.all
+    end
+  end
+
+  def links
+    @link = Link.find(params[:id])
+  end
+
+  def show_link
+    if params[:status] == "Interno" then
+      link_i = 1
+    elsif params[:status] == "Externo"
+      link_i = 0
+    end
+    if params[:search] && link_i == 1
+      @links = Link.where('(lower(name) LIKE ? ) and link_type = ?', "%#{params[:search].downcase}%", link_i)
+    elsif params[:search] && link_i == 0
+      @links = Link.where('(lower(name) LIKE ? ) and link_type = ?', "%#{params[:search].downcase}%", link_i)
+    else
+      @links = Link.all
     end
   end
 
@@ -61,6 +74,10 @@ private
 
   def course_params
     params.require(:course).permit(:name, :search, :status)
+  end
+
+  def link_params
+    params.require(:course).permit(:name, :search, :link_type)
   end
 end
 
