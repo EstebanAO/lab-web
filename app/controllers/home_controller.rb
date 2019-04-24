@@ -47,6 +47,25 @@ class HomeController < ApplicationController
     end
   end
 
+  def links
+    @link = Link.find(params[:id])
+  end
+
+  def show_link
+    if params[:status] == "Interno" then
+      link_i = 1
+    elsif params[:status] == "Externo"
+      link_i = 0
+    end
+    if params[:search] && link_i == 1
+      @links = Link.where('(lower(name) LIKE ? ) and link_type = ?', "%#{params[:search].downcase}%", link_i)
+    elsif params[:search] && link_i == 0
+      @links = Link.where('(lower(name) LIKE ? ) and link_type = ?', "%#{params[:search].downcase}%", link_i)
+    else
+      @links = Link.all
+    end
+  end
+
 private
 
   def professor_params
@@ -55,6 +74,10 @@ private
 
   def course_params
     params.require(:course).permit(:name, :search, :code, :clu_course, :clu_laboratory, :clu_unities, :status, :course_type, :information)
+  end
+
+  def link_params
+    params.require(:course).permit(:name, :search, :link_type)
   end
 end
 
