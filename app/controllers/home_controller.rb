@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       search_i = 1
     elsif params[:professor_type] == "Planta"
       search_i = 0
-    elsif  params[:professor_type] == "All"
+    elsif  params[:professor_type] == "Todos"
       search_i = 2
     end
     @ids = User.all.where(admin: false).map{|user| user.professor.id}
@@ -33,15 +33,19 @@ class HomeController < ApplicationController
   end
 
   def show_course
-    if params[:status] == "Activo" then
+    if params[:status] == "Activo"
       active_i = 1
     elsif params[:status] == "No activo"
       active_i = 0
+    elsif arams[:status] == "Todos"
+      active_i = 2
     end
     if params[:search] && active_i == 1
       @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", true)
     elsif params[:search] && active_i == 0
       @courses = Course.where('(lower(name) LIKE ? ) and status = ?', "%#{params[:search].downcase}%", false)
+    elsif params[:search] && active_i == 2
+      @courses = Course.where('(lower(name) LIKE ? )', "%#{params[:search].downcase}%")
     else
       @courses = Course.all
     end
@@ -52,15 +56,19 @@ class HomeController < ApplicationController
   end
 
   def show_link
-    if params[:status] == "Interno" then
-      link_i = 1
-    elsif params[:status] == "Externo"
+    if params[:status] == "Interno"
       link_i = 0
+    elsif params[:status] == "Externo"
+      link_i = 1
+    elsif params[:status] == "Todos"
+      link_i = 2
     end
     if params[:search] && link_i == 1
       @links = Link.where('(lower(name) LIKE ? ) and link_type = ?', "%#{params[:search].downcase}%", link_i)
     elsif params[:search] && link_i == 0
       @links = Link.where('(lower(name) LIKE ? ) and link_type = ?', "%#{params[:search].downcase}%", link_i)
+    elsif params[:search] && link_i == 2
+      @links = Link.where('(lower(name) LIKE ? )', "%#{params[:search].downcase}%")
     else
       @links = Link.all
     end

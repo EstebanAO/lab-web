@@ -4,7 +4,7 @@
     <div class="search-bar">
       <%= form_tag(show_link_path, method: :get) do %>
         <%= text_field_tag :search %>
-        <%= select_tag :status,"<option>Externo</option><option>Externo</option>".html_safe %>
+        <%= select_tag :status,"<option>Todos</option><option>Interno</option><option>Externo</option>".html_safe %>
         <%= submit_tag "Buscar",:class=>"btn btn-outline-secondary" %>
       <% end %>
     </div>
