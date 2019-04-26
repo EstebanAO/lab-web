@@ -36,8 +36,8 @@
         <div class="row" style="height: 300px; overflow-y: scroll;">
             <% @announcements.each do |announcement| %>
                 <div class="comment">
-                    <div class="username">Nombre completo del Profe -- Fecha de publicación</div>
-                    <p>Contenido del anuncio</p>
+                    <div class="username"><%= announcement.professor.name%><%= announcement.professor.father_last_name%><%= announcement.professor.mother_last_name%>  -- <%= announcement.date.strftime("%d-%m-%Y %I:%M")%></div>
+                    <p><%= announcement.description%></p>
                 </div>
             <% end %>
         </div>
