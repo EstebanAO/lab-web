@@ -48,9 +48,9 @@
                   <% end %>
                 <% end %>
                 <% if !current_user.present? %>
-                  <li><%= link_to 'Profesor', show_professor_path %></li>
-                  <li><%= link_to 'Cursos', show_course_path %></li>
-                  <li><%= link_to 'Proyectos', show_link_path %></li>
+                  <li><%= link_to 'Profesores', show_professor_path %></li>
+                  <li><%= link_to 'Materias', show_course_path %></li>
+                  <li><%= link_to 'Vinculaciones', show_link_path %></li>
                   <li><%= link_to 'Iniciar Sesión', new_user_session_url %></li>
                 <% else %>
                   <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>

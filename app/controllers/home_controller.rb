@@ -37,7 +37,7 @@ class HomeController < ApplicationController
       active_i = 1
     elsif params[:status] == "No activo"
       active_i = 0
-    elsif arams[:status] == "Todos"
+    elsif params[:status] == "Todos"
       active_i = 2
     end
     if params[:search] && active_i == 1
