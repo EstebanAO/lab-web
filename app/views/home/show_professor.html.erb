@@ -8,6 +8,11 @@
         <%= submit_tag "Buscar",:class=>"btn btn-outline-secondary" %>
       <% end %>
     </div>
+    <% if @professors.count == 0 %>
+      <div>
+        <p class="find_error_message">No hay profesores con esas caracteristicas.</p>
+      </div>
+    <% end %>
   <div class="cards">
     <% @professors.each do |professor| %>
         <div class="card">
