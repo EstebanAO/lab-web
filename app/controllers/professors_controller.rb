@@ -60,7 +60,7 @@ class ProfessorsController < ApplicationController
 
   # DELETE /professors/1
   # DELETE /professors/1.json
-  def destroys
+  def destroy
     @professor.destroy
     respond_to do |format|
       format.html { redirect_to professors_url, notice: 'Professor was successfully destroyed.' }

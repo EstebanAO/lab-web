@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :users
   get '/home/professors/:id' => 'home#professors', :as => '/home/professors'
   get '/home/show_professor' => 'home#show_professor', :as => '/show_professor'
-
+  get '/home/courses/:id' => 'home#courses', :as => '/home/courses'
+  get '/home/show_course' => 'home#show_course', :as =>'/show_course'
+  get '/home/links/:id' => 'home#links', :as => '/home/links'
+  get '/home/show_link' => 'home#show_link', :as =>'/show_link'
   resources :announcements
   resources :documents
   resources :professors
