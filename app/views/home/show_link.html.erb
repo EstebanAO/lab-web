@@ -1,0 +1,23 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h2 class="title">Lista de Vinculaciones</h2>
+    <div class="search-bar">
+      <%= form_tag(show_link_path, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= select_tag :status,"<option>Todos</option><option>Interno</option><option>Externo</option>".html_safe %>
+        <%= submit_tag "Buscar",:class=>"btn btn-outline-secondary" %>
+      <% end %>
+    </div>
+  <div class="cards">
+    <% @links.each do |link| %>
+        <div class="card">
+         <%= link_to home_links_path(link.id) do %>
+            <div class="card__inner">
+              <i class="fas fa-project-diagram"></i>
+              <p><%= link.name %></p>
+            </div>
+          <%end%>
+        </div>
+    <%end%>
+  </div>
+</div>
