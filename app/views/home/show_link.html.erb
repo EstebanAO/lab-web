@@ -8,6 +8,11 @@
         <%= submit_tag "Buscar",:class=>"btn btn-outline-secondary" %>
       <% end %>
     </div>
+    <% if @links.count == 0 %>
+      <div>
+        <p class="find_error_message">No hay vinculaciones con esas caracteristicas.</p>
+      </div>
+    <% end %>
   <div class="cards">
     <% @links.each do |link| %>
         <div class="card">
