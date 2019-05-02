@@ -356,7 +356,7 @@ section {
 .comment {
   position:relative; 
   margin:2rem 2rem 2rem 2rem;
-  background-color:#e3eeff; 
+  background-color:#EEE; 
   border:2px solid #AAA; 
   -webkit-border-radius:0.25rem; 
   -moz-border-radius:0.25rem; 
@@ -371,6 +371,7 @@ section {
 }
 .comment p {
   margin:0.5rem 0.5rem 0.5rem 2rem;
+  font-weight: 500;
 }
 
 .find_error_message{
