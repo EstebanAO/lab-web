@@ -29,8 +29,8 @@
         </div>
     </div>
 </section>
-   
-<section id="contact">
+
+<section id="announcement">
     <div class="row">
         <h2>Anuncios</h2>
         <div class="row" style="height: 300px; overflow-y: scroll;">
@@ -40,8 +40,9 @@
                     <p><%= announcement.description%></p>
                 </div>
             <% end %>
+            <div align="center">
+              <%= link_to 'Mas Anuncios', show_announcement_path, :class => 'btn btn-sm btn-primary' %>
+            </div>
         </div>
-    </div>
-    <div class="row">
     </div>
 </section>

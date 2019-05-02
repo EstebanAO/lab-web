@@ -1,0 +1,11 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h2 class="title">Lista de Anuncios</h2>
+    <% @announcements.each do |announcement| %>
+        <div class="comment">
+            <div class="username"><%= announcement.professor.name%><%= announcement.professor.father_last_name%><%= announcement.professor.mother_last_name%>  -- <%= announcement.date.strftime("%d-%m-%Y %I:%M")%></div>
+            <p><%= announcement.description%></p>
+        </div>
+    <% end %>
+    <%= will_paginate @announcements %>
+</div>

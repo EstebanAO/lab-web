@@ -1,11 +1,18 @@
+require 'will_paginate'
 class HomeController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     @announcements = Announcement.order(created_at: :desc)
+                                 .paginate(:page => params[:page], :per_page => 10)
   end
 
   def professors
     @professor = Professor.find(params[:id])
+  end
+
+  def show_announcement
+    @announcements = Announcement.order(created_at: :desc)
+                                 .paginate(:page => params[:page], :per_page => 20)
   end
 
   def show_professor
@@ -89,4 +96,3 @@ private
     params.require(:course).permit(:name, :search, :link_type)
   end
 end
-
