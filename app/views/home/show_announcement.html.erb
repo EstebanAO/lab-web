@@ -7,5 +7,5 @@
             <p><%= announcement.description%></p>
         </div>
     <% end %>
-    <%= will_paginate @announcements %>
+    <%= will_paginate @announcements, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
 </div>
