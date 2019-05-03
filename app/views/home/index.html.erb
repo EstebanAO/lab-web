@@ -40,9 +40,15 @@
                     <p><%= announcement.description%></p>
                 </div>
             <% end %>
-            <div align="center">
-              <%= link_to 'Mas Anuncios', show_announcement_path, :class => 'btn btn-sm btn-primary' %>
-            </div>
+            <% if @announcements.count == 0 %>
+              <div>
+                <p class="find_error_message">No hay anuncios.</p>
+              </div>
+            <% elsif %>
+              <div align="center">
+                <%= link_to 'Mas Anuncios', show_announcement_path, :class => 'btn btn-sm btn-primary' %>
+              </div>
+            <% end %>
         </div>
     </div>
 </section>
