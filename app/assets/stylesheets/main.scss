@@ -67,7 +67,7 @@ section {
   background-color: transparent;
 }
 
-@media all and (min-width: 1200px){
+@media only screen and (min-width: 1200px){
   .nav li a:after {
     display: block;
     content: "";
@@ -245,13 +245,13 @@ section {
  }
 
 
-@media all and (max-width: 1100px){
+@media only screen and (max-width: 1100px){
   .table-hidde{
     display: none;
   }
 }
 
-@media all and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   section { padding: 30px 0; }
 
   .navbar-toggle {
@@ -277,7 +277,7 @@ section {
   }
 }
 
-@media all and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   section { padding: 25px 0; }
   .btn:link,
   .btn:visited {
@@ -304,7 +304,7 @@ section {
 }
 
 
-@media all and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .navbar-header {
       float: none;
   }
