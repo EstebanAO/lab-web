@@ -354,13 +354,13 @@ section {
   padding:1rem 2rem;
 }
 .comment {
-  position:relative; 
+  position:relative;
   margin:2rem 2rem 2rem 2rem;
-  background-color:#EEE; 
-  border:2px solid #AAA; 
-  -webkit-border-radius:0.25rem; 
-  -moz-border-radius:0.25rem; 
-  border-radius:0.25rem; 
+  background-color:#EEE;
+  border:2px solid #AAA;
+  -webkit-border-radius:0.25rem;
+  -moz-border-radius:0.25rem;
+  border-radius:0.25rem;
   font-size:10pt;
 }
 .username {
@@ -378,4 +378,11 @@ section {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+}
+
+
+@media only screen and (max-width: 300px){
+  #departamento_titulo{
+    display: none;
+  }
 }
