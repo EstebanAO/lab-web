@@ -29,7 +29,9 @@
 
   <p class="text-center">
     <strong>URL:</strong>
-    <%= link_to nil, "http://#{@link.url}"%>
+    <% unless @link.url.blank?%>
+      <%= link_to nil, "http://#{@link.url}"%>
+    <% end %>
   </p>
 
   <p class="text-center">

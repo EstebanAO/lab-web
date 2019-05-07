@@ -29,7 +29,9 @@
 
   <p class="text-center">
     <strong>CV:</strong>
-    <%= link_to nil, "http://#{@professor.resume}"%>
+    <% unless @professor.resume.blank?%>
+      <%= link_to nil, "http://#{@professor.resume}"%>
+    <% end %>
   </p>
 
   <p class="text-center">
@@ -50,8 +52,11 @@
           <% @professor.documents.each do |document| %>
             <tr>
               <td class="text-center"><%= document.description %></td>
-              <td class="text-center"><%= link_to nil, "http://#{document.url}"%> </td>
-              
+              <% unless document.url.blank?%>
+            <td class="text-center table-hidde"><%= link_to nil, "http://#{document.url}"%></td>
+          <% else %>
+            <td class="text-center table-hidde"></td>
+          <% end %>
             </tr>
           <% end %>
         </tbody>
