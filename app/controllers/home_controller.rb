@@ -41,11 +41,11 @@ class HomeController < ApplicationController
   end
 
   def show_course
-    if params[:status] == "Activo"
+    if params[:status] == "Activas"
       active_i = 1
-    elsif params[:status] == "No activo"
+    elsif params[:status] == "Inactivas"
       active_i = 0
-    elsif params[:status] == "Todos"
+    elsif params[:status] == "Todas"
       active_i = 2
     end
     if params[:search] && active_i == 1
@@ -64,11 +64,11 @@ class HomeController < ApplicationController
   end
 
   def show_link
-    if params[:status] == "Interno"
+    if params[:status] == "Internas"
       link_i = 0
-    elsif params[:status] == "Externo"
+    elsif params[:status] == "Externas"
       link_i = 1
-    elsif params[:status] == "Todos"
+    elsif params[:status] == "Todas"
       link_i = 2
     end
     if params[:search] && link_i == 1
