@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Install ruby 2.6.1
 
-Things you may want to cover:
+Install rails 5.2.2.1
 
-* Ruby version
+Install postrgress
 
-* System dependencies
+Download master branch from https://github.com/EstebanAO/lab-web
 
-* Configuration
+Open the terminal and go to the folder of the project 
 
-* Database creation
+In config file create a file named application.rb with the following information:
 
-* Database initialization
+POSTGRES_USER: postgres
+WEB-ITESM_DATABASE_PASSWORD: some_password
+POSTGRES_HOST: db
+REDIS_URL: redis://@redis/0
 
-* How to run the test suite
+In terminal:
 
-* Services (job queues, cache servers, search engines, etc.)
+Run: rails db:create
 
-* Deployment instructions
+Run: rails db:migrate
 
-* ...
+Run: rails server
+
+Create a new user according to the users manual
+
+In another terminal run: rails console
+
+In rails console run: u = User.first
+
+In rails console run: u.admin = true
+
+In rails console run: u.save
+
+In rails console run: quit
