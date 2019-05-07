@@ -4,7 +4,7 @@ class Professor < ApplicationRecord
   has_many :documents, :dependent => :destroy
   enum professor_type: %i[Planta Catedra]
 
-  before_validation :validate_https
+  before_save :validate_https
 
   def validate_https
     url_cpy_with_s = self.resume

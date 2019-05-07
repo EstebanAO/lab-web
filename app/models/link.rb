@@ -1,7 +1,7 @@
 class Link < ApplicationRecord
     enum link_type: %i[Interno Externo]
     
-    before_validation :validate_https
+    before_save :validate_https
 
     def validate_https
       url_cpy_with_s = self.url

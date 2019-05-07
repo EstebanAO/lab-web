@@ -1,7 +1,7 @@
 class Document < ApplicationRecord
   belongs_to :professor
   
-  before_validation :validate_https
+  before_save :validate_https
 
   def validate_https
     url_cpy_with_s = self.url
