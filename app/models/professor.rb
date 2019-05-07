@@ -7,6 +7,9 @@ class Professor < ApplicationRecord
   before_save :validate_https
 
   def validate_https
+    if self.resume == "" || self.resume == nil then
+      return 
+    end
     url_cpy_with_s = self.resume
     url_cpy_with_out_s = self.resume
     url_cpy_with_s = url_cpy_with_s[0...8]

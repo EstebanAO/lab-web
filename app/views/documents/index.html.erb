@@ -16,7 +16,11 @@
       <% @documents.each do |document| %>
         <tr>
           <td class="text-center"><%= document.description %></td>
-          <td class="text-center"><%= link_to nil, "http://#{document.url}"%></td>
+          <% unless document.url.blank?%>
+            <td class="text-center table-hidde"><%= link_to nil, "http://#{document.url}"%></td>
+          <% else %>
+            <td class="text-center table-hidde"></td>
+          <% end %>
           <td class="text-center">
             <%= link_to document do %>
               <i class="btn fas fa-eye fa-sm text-primary" aria-hidden="true"></i>

@@ -29,7 +29,9 @@
 
   <p class="text-center">
     <strong>CV:</strong>
-    <%= link_to nil, "http://#{@professor.resume}"%>
+    <% unless @professor.resume.blank?%>
+      <%= link_to nil, "http://#{@professor.resume}"%>
+    <% end %>
   </p>
 
   <p class="text-center">

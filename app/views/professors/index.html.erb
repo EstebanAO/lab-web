@@ -18,7 +18,11 @@
           <td class="text-center"><%= professor.name %> <%= professor.father_last_name %> <%= professor.mother_last_name %></td>
           <td class="text-center table-hidde"><%= professor.email %></td>
           <td class="text-center table-hidde"><%= professor.office %></td>
-          <td class="text-center table-hidde"><%= link_to nil, "http://#{professor.resume}"%></td>
+          <% unless professor.resume.blank?%>
+            <td class="text-center table-hidde"><%= link_to nil, "http://#{professor.resume}"%></td>
+          <% else %>
+          <td class="text-center table-hidde"></td>
+          <% end %>
           
           <td class="text-center table-hidde"><%= professor.professor_type %></td>
           <td class="text-center">

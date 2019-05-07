@@ -9,7 +9,9 @@
 
   <p class="text-center">
     <strong>URL:</strong>
-    <%= link_to nil, "http://#{@document.url}"%>
+    <% unless @document.url.blank? %>
+      <%= link_to nil, "http://#{@document.url}"%>
+    <% end %>
   </p>
 
    <p class="text-center">
