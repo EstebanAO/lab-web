@@ -26,7 +26,7 @@
           <td class="text-center table-hidde"><%= link.start_date %></td>
           <td class="text-center table-hidde"><%= link.end_date %></td>
           <td class="text-center table-hidde"><%= link.link_type %></td>
-          <td class="text-center table-hidde"><%= link.url %></td>
+          <td class="text-center table-hidde"><%= link_to nil, "http://#{link.url}"%></td>
           <td class="text-center">
             <%= link_to link do %>
               <i class="btn fas fa-eye fa-sm text-primary" aria-hidden="true"></i>
